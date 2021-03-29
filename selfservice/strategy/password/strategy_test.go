@@ -11,12 +11,12 @@ import (
 
 	"github.com/ory/viper"
 
-	"github.com/ory/kratos/driver/configuration"
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/internal"
-	"github.com/ory/kratos/selfservice/strategy/password"
-	"github.com/ory/kratos/session"
-	"github.com/ory/kratos/x"
+	"kratos/driver/configuration"
+	"kratos/identity"
+	"kratos/internal"
+	"kratos/selfservice/strategy/password"
+	"kratos/session"
+	"kratos/x"
 )
 
 func expectStatusCodeBrowserOKOr(isAPI bool, apiExpect int) int {

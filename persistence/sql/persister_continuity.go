@@ -7,7 +7,7 @@ import (
 
 	"github.com/ory/x/sqlcon"
 
-	"github.com/ory/kratos/continuity"
+	"kratos/continuity"
 )
 
 var _ continuity.Persister = new(Persister)

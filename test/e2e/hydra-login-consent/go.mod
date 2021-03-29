@@ -1,4 +1,4 @@
-module github.com/ory/kratos/test/e2e/hydra-login-consent
+module kratos/test/e2e/hydra-login-consent
 
 go 1.14
 

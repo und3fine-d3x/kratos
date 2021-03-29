@@ -7,7 +7,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ory/kratos/driver/configuration"
+	"kratos/driver/configuration"
+
 	"github.com/ory/x/urlx"
 )
 

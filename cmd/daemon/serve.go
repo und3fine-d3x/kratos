@@ -11,7 +11,7 @@ import (
 
 	"github.com/ory/x/corsx"
 
-	"github.com/ory/kratos/metrics/prometheus"
+	"kratos/metrics/prometheus"
 
 	"github.com/ory/analytics-go/v4"
 
@@ -25,20 +25,20 @@ import (
 	"github.com/ory/graceful"
 	"github.com/ory/x/metricsx"
 
-	"github.com/ory/kratos/driver"
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/selfservice/errorx"
-	"github.com/ory/kratos/selfservice/flow/login"
-	"github.com/ory/kratos/selfservice/flow/logout"
-	"github.com/ory/kratos/selfservice/flow/registration"
-	"github.com/ory/kratos/selfservice/flow/settings"
-	"github.com/ory/kratos/selfservice/flow/verification"
-	"github.com/ory/kratos/selfservice/strategy/link"
-	"github.com/ory/kratos/selfservice/strategy/oidc"
-	"github.com/ory/kratos/selfservice/strategy/password"
-	"github.com/ory/kratos/selfservice/strategy/profile"
-	"github.com/ory/kratos/session"
-	"github.com/ory/kratos/x"
+	"kratos/driver"
+	"kratos/identity"
+	"kratos/selfservice/errorx"
+	"kratos/selfservice/flow/login"
+	"kratos/selfservice/flow/logout"
+	"kratos/selfservice/flow/registration"
+	"kratos/selfservice/flow/settings"
+	"kratos/selfservice/flow/verification"
+	"kratos/selfservice/strategy/link"
+	"kratos/selfservice/strategy/oidc"
+	"kratos/selfservice/strategy/password"
+	"kratos/selfservice/strategy/profile"
+	"kratos/session"
+	"kratos/x"
 )
 
 func servePublic(d driver.Driver, wg *sync.WaitGroup, cmd *cobra.Command, args []string) {

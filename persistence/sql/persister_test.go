@@ -13,13 +13,13 @@ import (
 
 	"github.com/ory/x/sqlcon"
 
-	"github.com/ory/kratos/continuity"
-	"github.com/ory/kratos/internal/testhelpers"
-	"github.com/ory/kratos/persistence/sql"
-	"github.com/ory/kratos/selfservice/errorx"
-	"github.com/ory/kratos/selfservice/flow/recovery"
-	"github.com/ory/kratos/selfservice/strategy/link"
-	"github.com/ory/kratos/x"
+	"kratos/continuity"
+	"kratos/internal/testhelpers"
+	"kratos/persistence/sql"
+	"kratos/selfservice/errorx"
+	"kratos/selfservice/flow/recovery"
+	"kratos/selfservice/strategy/link"
+	"kratos/x"
 
 	"github.com/gobuffalo/pop/v5"
 	"github.com/gobuffalo/pop/v5/logging"
@@ -30,14 +30,14 @@ import (
 	// "github.com/ory/x/sqlcon/dockertest"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ory/kratos/courier"
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/internal"
-	"github.com/ory/kratos/selfservice/flow/login"
-	"github.com/ory/kratos/selfservice/flow/registration"
-	"github.com/ory/kratos/selfservice/flow/settings"
-	"github.com/ory/kratos/selfservice/flow/verification"
-	"github.com/ory/kratos/session"
+	"kratos/courier"
+	"kratos/identity"
+	"kratos/internal"
+	"kratos/selfservice/flow/login"
+	"kratos/selfservice/flow/registration"
+	"kratos/selfservice/flow/settings"
+	"kratos/selfservice/flow/verification"
+	"kratos/session"
 )
 
 var sqlite = fmt.Sprintf("sqlite3://%s.sqlite?_fk=true&mode=rwc", filepath.Join(os.TempDir(), uuid.New().String()))

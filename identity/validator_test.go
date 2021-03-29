@@ -12,9 +12,9 @@ import (
 
 	"github.com/ory/viper"
 
-	"github.com/ory/kratos/driver/configuration"
-	. "github.com/ory/kratos/identity"
-	"github.com/ory/kratos/internal"
+	"kratos/driver/configuration"
+	. "kratos/identity"
+	"kratos/internal"
 )
 
 func TestSchemaValidator(t *testing.T) {

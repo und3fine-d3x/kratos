@@ -6,8 +6,9 @@ import (
 
 	"github.com/julienschmidt/httprouter"
 
+	"kratos/x"
+
 	"github.com/ory/herodot"
-	"github.com/ory/kratos/x"
 	"github.com/ory/nosurf"
 )
 

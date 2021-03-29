@@ -13,11 +13,11 @@ import (
 	"github.com/ory/viper"
 	"github.com/ory/x/assertx"
 
-	"github.com/ory/kratos/driver/configuration"
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/selfservice/flow/recovery"
-	"github.com/ory/kratos/selfservice/flow/verification"
-	"github.com/ory/kratos/x"
+	"kratos/driver/configuration"
+	"kratos/identity"
+	"kratos/selfservice/flow/recovery"
+	"kratos/selfservice/flow/verification"
+	"kratos/x"
 )
 
 func TestPersister(p interface {

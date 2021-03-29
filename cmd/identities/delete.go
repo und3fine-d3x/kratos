@@ -6,12 +6,12 @@ import (
 
 	"github.com/ory/x/cmdx"
 
-	"github.com/ory/kratos/internal/clihelpers"
+	"kratos/internal/clihelpers"
 
 	"github.com/spf13/cobra"
 
-	"github.com/ory/kratos/cmd/cliclient"
-	"github.com/ory/kratos/internal/httpclient/client/admin"
+	"kratos/cmd/cliclient"
+	"kratos/internal/httpclient/client/admin"
 )
 
 var deleteCmd = &cobra.Command{

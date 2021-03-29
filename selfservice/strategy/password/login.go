@@ -16,12 +16,12 @@ import (
 	"github.com/ory/herodot"
 	"github.com/ory/x/urlx"
 
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/schema"
-	"github.com/ory/kratos/selfservice/flow"
-	"github.com/ory/kratos/selfservice/flow/login"
-	"github.com/ory/kratos/selfservice/form"
-	"github.com/ory/kratos/x"
+	"kratos/identity"
+	"kratos/schema"
+	"kratos/selfservice/flow"
+	"kratos/selfservice/flow/login"
+	"kratos/selfservice/form"
+	"kratos/x"
 )
 
 const (

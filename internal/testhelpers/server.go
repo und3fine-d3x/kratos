@@ -7,9 +7,9 @@ import (
 
 	"github.com/ory/viper"
 
-	"github.com/ory/kratos/driver"
-	"github.com/ory/kratos/driver/configuration"
-	"github.com/ory/kratos/x"
+	"kratos/driver"
+	"kratos/driver/configuration"
+	"kratos/x"
 )
 
 func NewKratosServer(t *testing.T, reg driver.Registry) (public, admin *httptest.Server) {

@@ -14,12 +14,12 @@ import (
 
 	"github.com/ory/viper"
 
-	"github.com/ory/kratos/driver/configuration"
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/internal"
-	"github.com/ory/kratos/internal/testhelpers"
-	"github.com/ory/kratos/session"
-	"github.com/ory/kratos/x"
+	"kratos/driver/configuration"
+	"kratos/identity"
+	"kratos/internal"
+	"kratos/internal/testhelpers"
+	"kratos/session"
+	"kratos/x"
 )
 
 var _ x.CSRFHandler = new(mockCSRFHandler)

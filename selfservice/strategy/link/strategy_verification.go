@@ -17,13 +17,13 @@ import (
 	"github.com/ory/x/sqlxx"
 	"github.com/ory/x/urlx"
 
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/schema"
-	"github.com/ory/kratos/selfservice/flow"
-	"github.com/ory/kratos/selfservice/flow/verification"
-	"github.com/ory/kratos/selfservice/form"
-	"github.com/ory/kratos/text"
-	"github.com/ory/kratos/x"
+	"kratos/identity"
+	"kratos/schema"
+	"kratos/selfservice/flow"
+	"kratos/selfservice/flow/verification"
+	"kratos/selfservice/form"
+	"kratos/text"
+	"kratos/x"
 )
 
 const (

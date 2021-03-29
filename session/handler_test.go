@@ -18,14 +18,14 @@ import (
 
 	"github.com/ory/viper"
 
-	"github.com/ory/kratos/driver/configuration"
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/internal"
-	"github.com/ory/kratos/internal/httpclient/client/public"
-	"github.com/ory/kratos/internal/httpclient/models"
-	"github.com/ory/kratos/internal/testhelpers"
-	. "github.com/ory/kratos/session"
-	"github.com/ory/kratos/x"
+	"kratos/driver/configuration"
+	"kratos/identity"
+	"kratos/internal"
+	"kratos/internal/httpclient/client/public"
+	"kratos/internal/httpclient/models"
+	"kratos/internal/testhelpers"
+	. "kratos/session"
+	"kratos/x"
 )
 
 func init() {

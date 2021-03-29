@@ -25,16 +25,16 @@ import (
 
 	"github.com/ory/viper"
 
-	"github.com/ory/kratos/driver/configuration"
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/internal"
-	"github.com/ory/kratos/internal/httpclient/models"
-	"github.com/ory/kratos/internal/testhelpers"
-	"github.com/ory/kratos/schema"
-	"github.com/ory/kratos/selfservice/flow/login"
-	"github.com/ory/kratos/selfservice/strategy/password"
-	"github.com/ory/kratos/text"
-	"github.com/ory/kratos/x"
+	"kratos/driver/configuration"
+	"kratos/identity"
+	"kratos/internal"
+	"kratos/internal/httpclient/models"
+	"kratos/internal/testhelpers"
+	"kratos/schema"
+	"kratos/selfservice/flow/login"
+	"kratos/selfservice/strategy/password"
+	"kratos/text"
+	"kratos/x"
 )
 
 func TestCompleteLogin(t *testing.T) {

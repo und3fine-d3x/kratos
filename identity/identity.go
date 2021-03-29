@@ -9,12 +9,12 @@ import (
 	"github.com/ory/herodot"
 	"github.com/ory/x/sqlxx"
 
-	"github.com/ory/kratos/driver/configuration"
+	"kratos/driver/configuration"
 
 	"github.com/gofrs/uuid"
 	"github.com/pkg/errors"
 
-	"github.com/ory/kratos/x"
+	"kratos/x"
 )
 
 type (

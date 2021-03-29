@@ -10,11 +10,11 @@ import (
 	"github.com/markbates/pkger"
 	"github.com/pkg/errors"
 
-	"github.com/ory/kratos/driver/configuration"
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/persistence"
-	"github.com/ory/kratos/schema"
-	"github.com/ory/kratos/x"
+	"kratos/driver/configuration"
+	"kratos/identity"
+	"kratos/persistence"
+	"kratos/schema"
+	"kratos/x"
 )
 
 var _ persistence.Persister = new(Persister)

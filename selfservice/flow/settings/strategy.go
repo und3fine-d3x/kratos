@@ -6,8 +6,8 @@ import (
 
 	"github.com/pkg/errors"
 
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/x"
+	"kratos/identity"
+	"kratos/x"
 )
 
 const (

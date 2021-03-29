@@ -1,6 +1,6 @@
 package form
 
-import "github.com/ory/kratos/text"
+import "kratos/text"
 
 type Form interface {
 	ErrorParser

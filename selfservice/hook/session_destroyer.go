@@ -3,8 +3,8 @@ package hook
 import (
 	"net/http"
 
-	"github.com/ory/kratos/selfservice/flow/login"
-	"github.com/ory/kratos/session"
+	"kratos/selfservice/flow/login"
+	"kratos/session"
 )
 
 var _ login.PostHookExecutor = new(SessionDestroyer)

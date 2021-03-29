@@ -16,9 +16,9 @@ import (
 	"github.com/ory/viper"
 	"github.com/ory/x/urlx"
 
-	"github.com/ory/kratos/driver/configuration"
-	"github.com/ory/kratos/internal"
-	"github.com/ory/kratos/x"
+	"kratos/driver/configuration"
+	"kratos/internal"
+	"kratos/x"
 )
 
 func TestSecureContentNegotiationRedirection(t *testing.T) {

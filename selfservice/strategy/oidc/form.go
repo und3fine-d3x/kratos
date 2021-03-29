@@ -11,7 +11,7 @@ import (
 
 	"github.com/ory/x/decoderx"
 
-	"github.com/ory/kratos/identity"
+	"kratos/identity"
 )
 
 func decoderRegistration(ref string) (decoderx.HTTPDecoderOption, error) {

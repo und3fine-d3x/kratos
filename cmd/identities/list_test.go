@@ -10,7 +10,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ory/kratos/identity"
+	"kratos/identity"
 )
 
 func TestListCmd(t *testing.T) {

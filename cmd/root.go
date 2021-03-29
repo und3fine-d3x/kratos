@@ -5,15 +5,16 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/ory/kratos/cmd/hashers"
+	"kratos/cmd/hashers"
 
-	"github.com/ory/kratos/cmd/remote"
+	"kratos/cmd/remote"
 
-	"github.com/ory/kratos/cmd/identities"
-	"github.com/ory/kratos/cmd/jsonnet"
-	"github.com/ory/kratos/cmd/migrate"
-	"github.com/ory/kratos/cmd/serve"
-	"github.com/ory/kratos/internal/clihelpers"
+	"kratos/cmd/identities"
+	"kratos/cmd/jsonnet"
+	"kratos/cmd/migrate"
+	"kratos/cmd/serve"
+	"kratos/internal/clihelpers"
+
 	"github.com/ory/x/cmdx"
 
 	"github.com/ory/x/viperx"

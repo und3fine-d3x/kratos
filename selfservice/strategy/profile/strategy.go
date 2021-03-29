@@ -19,16 +19,16 @@ import (
 	"github.com/ory/x/decoderx"
 	"github.com/ory/x/urlx"
 
-	"github.com/ory/kratos/continuity"
-	"github.com/ory/kratos/driver/configuration"
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/schema"
-	"github.com/ory/kratos/selfservice/errorx"
-	"github.com/ory/kratos/selfservice/flow"
-	"github.com/ory/kratos/selfservice/flow/settings"
-	"github.com/ory/kratos/selfservice/form"
-	"github.com/ory/kratos/session"
-	"github.com/ory/kratos/x"
+	"kratos/continuity"
+	"kratos/driver/configuration"
+	"kratos/identity"
+	"kratos/schema"
+	"kratos/selfservice/errorx"
+	"kratos/selfservice/flow"
+	"kratos/selfservice/flow/settings"
+	"kratos/selfservice/form"
+	"kratos/session"
+	"kratos/x"
 )
 
 const (

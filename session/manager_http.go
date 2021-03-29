@@ -11,8 +11,8 @@ import (
 
 	"github.com/ory/herodot"
 
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/x"
+	"kratos/identity"
+	"kratos/x"
 )
 
 type (

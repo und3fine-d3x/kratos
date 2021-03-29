@@ -9,12 +9,12 @@ import (
 
 	"github.com/ory/x/sqlcon"
 
-	"github.com/ory/kratos/driver/configuration"
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/schema"
-	"github.com/ory/kratos/selfservice/flow"
-	"github.com/ory/kratos/session"
-	"github.com/ory/kratos/x"
+	"kratos/driver/configuration"
+	"kratos/identity"
+	"kratos/schema"
+	"kratos/selfservice/flow"
+	"kratos/session"
+	"kratos/x"
 )
 
 type (

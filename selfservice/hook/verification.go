@@ -3,12 +3,12 @@ package hook
 import (
 	"net/http"
 
-	"github.com/ory/kratos/driver/configuration"
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/selfservice/flow/registration"
-	"github.com/ory/kratos/selfservice/flow/settings"
-	"github.com/ory/kratos/selfservice/strategy/link"
-	"github.com/ory/kratos/session"
+	"kratos/driver/configuration"
+	"kratos/identity"
+	"kratos/selfservice/flow/registration"
+	"kratos/selfservice/flow/settings"
+	"kratos/selfservice/strategy/link"
+	"kratos/session"
 )
 
 var _ registration.PostHookPostPersistExecutor = new(Verifier)

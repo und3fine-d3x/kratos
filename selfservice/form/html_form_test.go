@@ -19,8 +19,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ory/kratos/schema"
-	"github.com/ory/kratos/text"
+	"kratos/schema"
+	"kratos/text"
 )
 
 func newJSONRequest(t *testing.T, j string) *http.Request {

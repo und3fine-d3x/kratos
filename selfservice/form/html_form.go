@@ -18,8 +18,8 @@ import (
 	"github.com/ory/x/jsonx"
 	"github.com/ory/x/stringslice"
 
-	"github.com/ory/kratos/schema"
-	"github.com/ory/kratos/text"
+	"kratos/schema"
+	"kratos/text"
 )
 
 var (

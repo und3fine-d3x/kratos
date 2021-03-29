@@ -6,7 +6,7 @@ import (
 
 	"github.com/ory/jsonschema/v3"
 
-	"github.com/ory/kratos/schema"
+	"kratos/schema"
 )
 
 type SchemaExtensionRecovery struct {

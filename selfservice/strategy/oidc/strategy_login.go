@@ -9,10 +9,10 @@ import (
 
 	"github.com/ory/herodot"
 
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/selfservice/flow"
-	"github.com/ory/kratos/selfservice/flow/login"
-	"github.com/ory/kratos/x"
+	"kratos/identity"
+	"kratos/selfservice/flow"
+	"kratos/selfservice/flow/login"
+	"kratos/x"
 )
 
 var _ login.Strategy = new(Strategy)

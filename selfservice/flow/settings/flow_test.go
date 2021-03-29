@@ -13,11 +13,11 @@ import (
 
 	"github.com/ory/x/urlx"
 
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/selfservice/flow"
-	"github.com/ory/kratos/selfservice/flow/settings"
-	"github.com/ory/kratos/session"
-	"github.com/ory/kratos/x"
+	"kratos/identity"
+	"kratos/selfservice/flow"
+	"kratos/selfservice/flow/settings"
+	"kratos/session"
+	"kratos/x"
 )
 
 func TestFakeFlow(t *testing.T) {

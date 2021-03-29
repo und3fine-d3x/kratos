@@ -25,16 +25,16 @@ import (
 
 	"github.com/ory/x/urlx"
 
-	"github.com/ory/kratos/driver/configuration"
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/internal"
-	"github.com/ory/kratos/internal/httpclient/models"
-	"github.com/ory/kratos/internal/testhelpers"
-	"github.com/ory/kratos/selfservice/flow"
-	"github.com/ory/kratos/selfservice/flow/registration"
-	"github.com/ory/kratos/selfservice/form"
-	"github.com/ory/kratos/selfservice/strategy/password"
-	"github.com/ory/kratos/x"
+	"kratos/driver/configuration"
+	"kratos/identity"
+	"kratos/internal"
+	"kratos/internal/httpclient/models"
+	"kratos/internal/testhelpers"
+	"kratos/selfservice/flow"
+	"kratos/selfservice/flow/registration"
+	"kratos/selfservice/form"
+	"kratos/selfservice/strategy/password"
+	"kratos/x"
 )
 
 func checkFormContent(t *testing.T, body []byte, requiredFields ...string) {

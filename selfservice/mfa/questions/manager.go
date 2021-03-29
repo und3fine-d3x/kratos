@@ -6,10 +6,10 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/ory/kratos/driver/configuration"
-	"github.com/ory/kratos/hash"
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/selfservice/form"
+	"kratos/driver/configuration"
+	"kratos/hash"
+	"kratos/identity"
+	"kratos/selfservice/form"
 )
 
 type (

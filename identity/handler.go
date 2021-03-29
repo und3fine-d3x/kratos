@@ -10,7 +10,7 @@ import (
 	"github.com/ory/x/jsonx"
 	"github.com/ory/x/urlx"
 
-	"github.com/ory/kratos/x"
+	"kratos/x"
 )
 
 const RouteBase = "/identities"

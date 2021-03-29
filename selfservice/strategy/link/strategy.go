@@ -3,17 +3,17 @@ package link
 import (
 	"github.com/ory/x/decoderx"
 
-	"github.com/ory/kratos/courier"
-	"github.com/ory/kratos/driver/configuration"
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/schema"
-	"github.com/ory/kratos/selfservice/errorx"
-	"github.com/ory/kratos/selfservice/flow/recovery"
-	"github.com/ory/kratos/selfservice/flow/settings"
-	"github.com/ory/kratos/selfservice/flow/verification"
-	"github.com/ory/kratos/selfservice/form"
-	"github.com/ory/kratos/session"
-	"github.com/ory/kratos/x"
+	"kratos/courier"
+	"kratos/driver/configuration"
+	"kratos/identity"
+	"kratos/schema"
+	"kratos/selfservice/errorx"
+	"kratos/selfservice/flow/recovery"
+	"kratos/selfservice/flow/settings"
+	"kratos/selfservice/flow/verification"
+	"kratos/selfservice/form"
+	"kratos/session"
+	"kratos/x"
 )
 
 var _ recovery.Strategy = new(Strategy)

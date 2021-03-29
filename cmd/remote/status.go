@@ -7,8 +7,8 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/ory/kratos/cmd/cliclient"
-	"github.com/ory/kratos/internal/httpclient/client/health"
+	"kratos/cmd/cliclient"
+	"kratos/internal/httpclient/client/health"
 )
 
 type statusState struct {

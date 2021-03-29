@@ -1,7 +1,7 @@
 package driver
 
 import (
-	"github.com/ory/kratos/selfservice/flow/recovery"
+	"kratos/selfservice/flow/recovery"
 )
 
 func (m *RegistryDefault) RecoveryFlowErrorHandler() *recovery.ErrorHandler {

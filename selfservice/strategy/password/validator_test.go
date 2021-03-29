@@ -8,9 +8,10 @@ import (
 	"net/http"
 	"testing"
 
-	"github.com/ory/kratos/driver/configuration"
-	"github.com/ory/kratos/internal"
-	"github.com/ory/kratos/selfservice/strategy/password"
+	"kratos/driver/configuration"
+	"kratos/internal"
+	"kratos/selfservice/strategy/password"
+
 	"github.com/ory/viper"
 
 	"github.com/stretchr/testify/require"

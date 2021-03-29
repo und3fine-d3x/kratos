@@ -8,9 +8,9 @@ import (
 
 	"github.com/ory/x/randx"
 
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/selfservice/flow/verification"
-	"github.com/ory/kratos/x"
+	"kratos/identity"
+	"kratos/selfservice/flow/verification"
+	"kratos/x"
 )
 
 type VerificationToken struct {

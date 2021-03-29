@@ -5,7 +5,7 @@ import (
 
 	"github.com/ory/x/cmdx"
 
-	"github.com/ory/kratos/internal/httpclient/models"
+	"kratos/internal/httpclient/models"
 )
 
 type (

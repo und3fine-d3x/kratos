@@ -1,9 +1,9 @@
 package driver
 
 import (
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/selfservice/flow/verification"
-	"github.com/ory/kratos/selfservice/strategy/link"
+	"kratos/identity"
+	"kratos/selfservice/flow/verification"
+	"kratos/selfservice/strategy/link"
 )
 
 func (m *RegistryDefault) VerificationFlowPersister() verification.FlowPersister {

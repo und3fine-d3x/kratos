@@ -9,8 +9,9 @@ import (
 	"github.com/inhies/go-bytesize"
 	"github.com/spf13/cobra"
 
-	"github.com/ory/kratos/driver/configuration"
-	"github.com/ory/kratos/hash"
+	"kratos/driver/configuration"
+	"kratos/hash"
+
 	"github.com/ory/x/cmdx"
 )
 

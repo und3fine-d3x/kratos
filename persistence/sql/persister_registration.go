@@ -8,8 +8,8 @@ import (
 
 	"github.com/ory/x/sqlcon"
 
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/selfservice/flow/registration"
+	"kratos/identity"
+	"kratos/selfservice/flow/registration"
 )
 
 func (p *Persister) CreateRegistrationFlow(ctx context.Context, r *registration.Flow) error {

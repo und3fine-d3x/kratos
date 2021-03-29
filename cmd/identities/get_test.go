@@ -5,13 +5,13 @@ import (
 	"encoding/json"
 	"testing"
 
-	"github.com/ory/kratos/x"
+	"kratos/x"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ory/kratos/driver/configuration"
-	"github.com/ory/kratos/identity"
+	"kratos/driver/configuration"
+	"kratos/identity"
 )
 
 func TestGetCmd(t *testing.T) {

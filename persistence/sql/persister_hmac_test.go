@@ -3,8 +3,8 @@ package sql
 import (
 	"testing"
 
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/schema"
+	"kratos/identity"
+	"kratos/schema"
 
 	"github.com/gobuffalo/pop/v5"
 	"github.com/stretchr/testify/assert"
@@ -13,7 +13,7 @@ import (
 	"github.com/ory/viper"
 	"github.com/ory/x/logrusx"
 
-	"github.com/ory/kratos/driver/configuration"
+	"kratos/driver/configuration"
 )
 
 type logRegistryOnly struct {

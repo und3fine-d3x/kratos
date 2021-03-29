@@ -10,8 +10,8 @@ import (
 
 	"github.com/ory/x/urlx"
 
-	"github.com/ory/kratos/internal/testhelpers"
-	"github.com/ory/kratos/schema"
+	"kratos/internal/testhelpers"
+	"kratos/schema"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
@@ -19,10 +19,10 @@ import (
 
 	"github.com/ory/viper"
 
-	"github.com/ory/kratos/driver/configuration"
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/internal"
-	"github.com/ory/kratos/x"
+	"kratos/driver/configuration"
+	"kratos/identity"
+	"kratos/internal"
+	"kratos/x"
 )
 
 func TestHandler(t *testing.T) {

@@ -5,8 +5,9 @@ import (
 
 	"github.com/pkg/errors"
 
+	"kratos/x"
+
 	"github.com/ory/herodot"
-	"github.com/ory/kratos/x"
 	"github.com/ory/nosurf"
 )
 

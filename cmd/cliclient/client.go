@@ -9,7 +9,8 @@ import (
 
 	"github.com/spf13/pflag"
 
-	"github.com/ory/kratos/internal/httpclient/client"
+	"kratos/internal/httpclient/client"
+
 	"github.com/ory/x/cmdx"
 )
 

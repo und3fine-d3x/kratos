@@ -6,10 +6,10 @@ import (
 
 	"github.com/julienschmidt/httprouter"
 
-	"github.com/ory/kratos/driver/configuration"
-	"github.com/ory/kratos/selfservice/errorx"
-	"github.com/ory/kratos/session"
-	"github.com/ory/kratos/x"
+	"kratos/driver/configuration"
+	"kratos/selfservice/errorx"
+	"kratos/session"
+	"kratos/x"
 )
 
 const (

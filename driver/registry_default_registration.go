@@ -1,8 +1,8 @@
 package driver
 
 import (
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/selfservice/flow/registration"
+	"kratos/identity"
+	"kratos/selfservice/flow/registration"
 )
 
 func (m *RegistryDefault) PostRegistrationPrePersistHooks(credentialsType identity.CredentialsType) (b []registration.PostHookPrePersistExecutor) {

@@ -15,12 +15,12 @@ import (
 
 	"github.com/ory/viper"
 
-	"github.com/ory/kratos/driver"
-	"github.com/ory/kratos/driver/configuration"
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/selfservice/flow/login"
-	"github.com/ory/kratos/selfservice/flow/registration"
-	"github.com/ory/kratos/selfservice/flow/settings"
+	"kratos/driver"
+	"kratos/driver/configuration"
+	"kratos/identity"
+	"kratos/selfservice/flow/login"
+	"kratos/selfservice/flow/registration"
+	"kratos/selfservice/flow/settings"
 )
 
 func TestSelfServicePreHook(

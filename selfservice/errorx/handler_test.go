@@ -15,10 +15,11 @@ import (
 	"github.com/stretchr/testify/require"
 	"github.com/tidwall/gjson"
 
+	"kratos/internal"
+	"kratos/selfservice/errorx"
+	"kratos/x"
+
 	"github.com/ory/herodot"
-	"github.com/ory/kratos/internal"
-	"github.com/ory/kratos/selfservice/errorx"
-	"github.com/ory/kratos/x"
 	"github.com/ory/nosurf"
 	"github.com/ory/x/errorsx"
 )

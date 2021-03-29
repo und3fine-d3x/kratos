@@ -5,9 +5,10 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/ory/kratos/driver/configuration"
-	"github.com/ory/kratos/internal"
-	"github.com/ory/kratos/schema"
+	"kratos/driver/configuration"
+	"kratos/internal"
+	"kratos/schema"
+
 	"github.com/ory/viper"
 	"github.com/ory/x/urlx"
 )

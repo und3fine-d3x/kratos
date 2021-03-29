@@ -17,18 +17,18 @@ import (
 	_ "github.com/ory/jsonschema/v3/httploader"
 	"github.com/ory/x/decoderx"
 
-	"github.com/ory/kratos/driver/configuration"
-	"github.com/ory/kratos/selfservice/flow"
-	"github.com/ory/kratos/session"
+	"kratos/driver/configuration"
+	"kratos/selfservice/flow"
+	"kratos/session"
 
 	"github.com/ory/herodot"
 	"github.com/ory/x/urlx"
 
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/schema"
-	"github.com/ory/kratos/selfservice/flow/registration"
-	"github.com/ory/kratos/selfservice/form"
-	"github.com/ory/kratos/x"
+	"kratos/identity"
+	"kratos/schema"
+	"kratos/selfservice/flow/registration"
+	"kratos/selfservice/form"
+	"kratos/x"
 )
 
 const (

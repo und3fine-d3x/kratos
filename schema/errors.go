@@ -7,7 +7,7 @@ import (
 
 	"github.com/ory/jsonschema/v3"
 
-	"github.com/ory/kratos/text"
+	"kratos/text"
 )
 
 type ValidationError struct {

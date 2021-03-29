@@ -11,10 +11,10 @@ import (
 
 	"github.com/ory/x/urlx"
 
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/selfservice/flow"
-	"github.com/ory/kratos/text"
-	"github.com/ory/kratos/x"
+	"kratos/identity"
+	"kratos/selfservice/flow"
+	"kratos/text"
+	"kratos/x"
 )
 
 // swagger:model registrationFlow

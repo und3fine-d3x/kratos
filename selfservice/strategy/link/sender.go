@@ -10,13 +10,13 @@ import (
 	"github.com/ory/x/sqlcon"
 	"github.com/ory/x/urlx"
 
-	"github.com/ory/kratos/courier"
-	templates "github.com/ory/kratos/courier/template"
-	"github.com/ory/kratos/driver/configuration"
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/selfservice/flow/recovery"
-	"github.com/ory/kratos/selfservice/flow/verification"
-	"github.com/ory/kratos/x"
+	"kratos/courier"
+	templates "kratos/courier/template"
+	"kratos/driver/configuration"
+	"kratos/identity"
+	"kratos/selfservice/flow/recovery"
+	"kratos/selfservice/flow/verification"
+	"kratos/x"
 )
 
 type (

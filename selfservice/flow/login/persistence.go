@@ -9,10 +9,10 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/selfservice/flow"
-	"github.com/ory/kratos/selfservice/form"
-	"github.com/ory/kratos/x"
+	"kratos/identity"
+	"kratos/selfservice/flow"
+	"kratos/selfservice/form"
+	"kratos/x"
 )
 
 type (

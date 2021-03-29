@@ -1,8 +1,8 @@
 package driver
 
 import (
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/selfservice/flow/login"
+	"kratos/identity"
+	"kratos/selfservice/flow/login"
 )
 
 func (m *RegistryDefault) LoginHookExecutor() *login.HookExecutor {

@@ -9,16 +9,16 @@ import (
 
 	"github.com/ory/x/decoderx"
 
-	"github.com/ory/kratos/continuity"
-	"github.com/ory/kratos/driver/configuration"
-	"github.com/ory/kratos/hash"
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/selfservice/errorx"
-	"github.com/ory/kratos/selfservice/flow/login"
-	"github.com/ory/kratos/selfservice/flow/registration"
-	"github.com/ory/kratos/selfservice/flow/settings"
-	"github.com/ory/kratos/session"
-	"github.com/ory/kratos/x"
+	"kratos/continuity"
+	"kratos/driver/configuration"
+	"kratos/hash"
+	"kratos/identity"
+	"kratos/selfservice/errorx"
+	"kratos/selfservice/flow/login"
+	"kratos/selfservice/flow/registration"
+	"kratos/selfservice/flow/settings"
+	"kratos/session"
+	"kratos/x"
 )
 
 var _ login.Strategy = new(Strategy)

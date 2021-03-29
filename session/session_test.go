@@ -6,9 +6,9 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/internal"
-	"github.com/ory/kratos/session"
+	"kratos/identity"
+	"kratos/internal"
+	"kratos/session"
 )
 
 func TestSession(t *testing.T) {

@@ -13,10 +13,11 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/tidwall/gjson"
 
-	"github.com/ory/kratos/internal/httpclient/client/public"
+	"kratos/internal/httpclient/client/public"
+
+	"kratos/cmd/cliclient"
 
 	"github.com/ory/jsonschema/v3"
-	"github.com/ory/kratos/cmd/cliclient"
 	"github.com/ory/x/viperx"
 )
 

@@ -13,8 +13,8 @@ import (
 	"github.com/ory/jsonschema/v3"
 	"github.com/ory/x/errorsx"
 
-	"github.com/ory/kratos/courier"
-	"github.com/ory/kratos/driver/configuration"
+	"kratos/courier"
+	"kratos/driver/configuration"
 )
 
 var ErrProtectedFieldModified = herodot.ErrForbidden.

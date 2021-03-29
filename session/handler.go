@@ -12,8 +12,8 @@ import (
 
 	"github.com/ory/herodot"
 
-	"github.com/ory/kratos/driver/configuration"
-	"github.com/ory/kratos/x"
+	"kratos/driver/configuration"
+	"kratos/x"
 )
 
 type (

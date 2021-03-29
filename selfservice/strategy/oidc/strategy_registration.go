@@ -8,11 +8,11 @@ import (
 	"github.com/google/go-jsonnet"
 	"github.com/tidwall/gjson"
 
-	"github.com/ory/kratos/driver/configuration"
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/selfservice/flow"
-	"github.com/ory/kratos/selfservice/flow/registration"
-	"github.com/ory/kratos/x"
+	"kratos/driver/configuration"
+	"kratos/identity"
+	"kratos/selfservice/flow"
+	"kratos/selfservice/flow/registration"
+	"kratos/x"
 )
 
 const (

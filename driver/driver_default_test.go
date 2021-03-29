@@ -11,8 +11,8 @@ import (
 	"github.com/ory/viper"
 	"github.com/ory/x/logrusx"
 
-	driver "github.com/ory/kratos/driver"
-	"github.com/ory/kratos/driver/configuration"
+	driver "kratos/driver"
+	"kratos/driver/configuration"
 )
 
 func TestDriverDefault_SQLiteMemoryMode(t *testing.T) {

@@ -13,7 +13,7 @@ import (
 
 	"github.com/ory/herodot"
 
-	"github.com/ory/kratos/x"
+	"kratos/x"
 )
 
 type (

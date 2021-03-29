@@ -9,9 +9,9 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/ory/kratos/cmd/cliclient"
-	"github.com/ory/kratos/internal/httpclient/client/admin"
-	"github.com/ory/kratos/internal/httpclient/models"
+	"kratos/cmd/cliclient"
+	"kratos/internal/httpclient/client/admin"
+	"kratos/internal/httpclient/models"
 )
 
 // importCmd represents the import command

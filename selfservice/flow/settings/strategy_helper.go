@@ -14,12 +14,12 @@ import (
 
 	"github.com/ory/herodot"
 
-	"github.com/ory/kratos/continuity"
-	"github.com/ory/kratos/driver/configuration"
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/selfservice/flow"
-	"github.com/ory/kratos/session"
-	"github.com/ory/kratos/x"
+	"kratos/continuity"
+	"kratos/driver/configuration"
+	"kratos/identity"
+	"kratos/selfservice/flow"
+	"kratos/session"
+	"kratos/x"
 )
 
 var (

@@ -10,7 +10,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ory/kratos/x"
+	"kratos/x"
 )
 
 func TestLoadTextTemplate(t *testing.T) {

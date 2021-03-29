@@ -21,18 +21,18 @@ import (
 
 	"github.com/ory/herodot"
 
-	"github.com/ory/kratos/driver/configuration"
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/internal"
-	sdkp "github.com/ory/kratos/internal/httpclient/client/public"
-	"github.com/ory/kratos/internal/httpclient/models"
-	"github.com/ory/kratos/internal/testhelpers"
-	"github.com/ory/kratos/schema"
-	"github.com/ory/kratos/selfservice/flow"
-	"github.com/ory/kratos/selfservice/flow/settings"
-	"github.com/ory/kratos/session"
-	"github.com/ory/kratos/text"
-	"github.com/ory/kratos/x"
+	"kratos/driver/configuration"
+	"kratos/identity"
+	"kratos/internal"
+	sdkp "kratos/internal/httpclient/client/public"
+	"kratos/internal/httpclient/models"
+	"kratos/internal/testhelpers"
+	"kratos/schema"
+	"kratos/selfservice/flow"
+	"kratos/selfservice/flow/settings"
+	"kratos/session"
+	"kratos/text"
+	"kratos/x"
 )
 
 func TestHandleError(t *testing.T) {

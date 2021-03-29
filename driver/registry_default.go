@@ -6,20 +6,20 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ory/kratos/metrics/prometheus"
+	"kratos/metrics/prometheus"
 
 	"github.com/gobuffalo/pop/v5"
 
-	"github.com/ory/kratos/continuity"
-	"github.com/ory/kratos/hash"
-	"github.com/ory/kratos/schema"
-	"github.com/ory/kratos/selfservice/flow/recovery"
-	"github.com/ory/kratos/selfservice/flow/settings"
-	"github.com/ory/kratos/selfservice/flow/verification"
-	"github.com/ory/kratos/selfservice/hook"
-	"github.com/ory/kratos/selfservice/strategy/link"
-	"github.com/ory/kratos/selfservice/strategy/profile"
-	"github.com/ory/kratos/x"
+	"kratos/continuity"
+	"kratos/hash"
+	"kratos/schema"
+	"kratos/selfservice/flow/recovery"
+	"kratos/selfservice/flow/settings"
+	"kratos/selfservice/flow/verification"
+	"kratos/selfservice/hook"
+	"kratos/selfservice/strategy/link"
+	"kratos/selfservice/strategy/profile"
+	"kratos/x"
 
 	"github.com/cenkalti/backoff"
 	"github.com/gorilla/sessions"
@@ -33,21 +33,21 @@ import (
 
 	"github.com/ory/x/logrusx"
 
-	"github.com/ory/kratos/courier"
-	"github.com/ory/kratos/persistence"
-	"github.com/ory/kratos/persistence/sql"
-	"github.com/ory/kratos/selfservice/flow/login"
-	"github.com/ory/kratos/selfservice/flow/logout"
-	"github.com/ory/kratos/selfservice/flow/registration"
-	"github.com/ory/kratos/selfservice/strategy/oidc"
+	"kratos/courier"
+	"kratos/persistence"
+	"kratos/persistence/sql"
+	"kratos/selfservice/flow/login"
+	"kratos/selfservice/flow/logout"
+	"kratos/selfservice/flow/registration"
+	"kratos/selfservice/strategy/oidc"
 
 	"github.com/ory/herodot"
 
-	"github.com/ory/kratos/driver/configuration"
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/selfservice/errorx"
-	password2 "github.com/ory/kratos/selfservice/strategy/password"
-	"github.com/ory/kratos/session"
+	"kratos/driver/configuration"
+	"kratos/identity"
+	"kratos/selfservice/errorx"
+	password2 "kratos/selfservice/strategy/password"
+	"kratos/session"
 )
 
 var _ Registry = new(RegistryDefault)

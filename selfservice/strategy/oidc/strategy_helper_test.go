@@ -30,11 +30,11 @@ import (
 	"github.com/ory/x/resilience"
 	"github.com/ory/x/urlx"
 
-	"github.com/ory/kratos/driver"
-	"github.com/ory/kratos/driver/configuration"
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/selfservice/strategy/oidc"
-	"github.com/ory/kratos/x"
+	"kratos/driver"
+	"kratos/driver/configuration"
+	"kratos/identity"
+	"kratos/selfservice/strategy/oidc"
+	"kratos/x"
 )
 
 func createClient(t *testing.T, remote string, redir, id string) {

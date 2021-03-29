@@ -6,13 +6,13 @@ import (
 
 	"github.com/ory/x/cmdx"
 
-	"github.com/ory/kratos/internal/clihelpers"
-	"github.com/ory/kratos/internal/httpclient/models"
+	"kratos/internal/clihelpers"
+	"kratos/internal/httpclient/models"
 
 	"github.com/spf13/cobra"
 
-	"github.com/ory/kratos/cmd/cliclient"
-	"github.com/ory/kratos/internal/httpclient/client/admin"
+	"kratos/cmd/cliclient"
+	"kratos/internal/httpclient/client/admin"
 )
 
 var getCmd = &cobra.Command{

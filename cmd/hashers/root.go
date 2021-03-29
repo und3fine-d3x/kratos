@@ -3,7 +3,7 @@ package hashers
 import (
 	"github.com/spf13/cobra"
 
-	"github.com/ory/kratos/cmd/hashers/argon2"
+	"kratos/cmd/hashers/argon2"
 )
 
 var rootCmd = &cobra.Command{

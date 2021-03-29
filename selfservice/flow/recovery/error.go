@@ -12,11 +12,11 @@ import (
 	"github.com/ory/herodot"
 	"github.com/ory/x/urlx"
 
-	"github.com/ory/kratos/driver/configuration"
-	"github.com/ory/kratos/selfservice/errorx"
-	"github.com/ory/kratos/selfservice/flow"
-	"github.com/ory/kratos/text"
-	"github.com/ory/kratos/x"
+	"kratos/driver/configuration"
+	"kratos/selfservice/errorx"
+	"kratos/selfservice/flow"
+	"kratos/text"
+	"kratos/x"
 )
 
 var (

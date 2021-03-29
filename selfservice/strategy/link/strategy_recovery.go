@@ -20,14 +20,14 @@ import (
 	"github.com/ory/x/sqlcon"
 	"github.com/ory/x/urlx"
 
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/schema"
-	"github.com/ory/kratos/selfservice/flow"
-	"github.com/ory/kratos/selfservice/flow/recovery"
-	"github.com/ory/kratos/selfservice/form"
-	"github.com/ory/kratos/session"
-	"github.com/ory/kratos/text"
-	"github.com/ory/kratos/x"
+	"kratos/identity"
+	"kratos/schema"
+	"kratos/selfservice/flow"
+	"kratos/selfservice/flow/recovery"
+	"kratos/selfservice/form"
+	"kratos/session"
+	"kratos/text"
+	"kratos/x"
 )
 
 const (

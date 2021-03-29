@@ -1,6 +1,6 @@
 package password
 
-import "github.com/ory/kratos/selfservice/form"
+import "kratos/selfservice/form"
 
 type (
 	// CredentialsConfig is the struct that is being used as part of the identity credentials.

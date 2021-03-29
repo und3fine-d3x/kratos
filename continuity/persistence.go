@@ -12,8 +12,8 @@ import (
 	"github.com/ory/x/sqlcon"
 	"github.com/ory/x/sqlxx"
 
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/x"
+	"kratos/identity"
+	"kratos/x"
 )
 
 type PersistenceProvider interface {

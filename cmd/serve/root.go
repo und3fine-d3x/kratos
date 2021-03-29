@@ -18,10 +18,11 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/ory/kratos/internal/clihelpers"
+	"kratos/internal/clihelpers"
+
 	"github.com/ory/x/logrusx"
 
-	"github.com/ory/kratos/driver/configuration"
+	"kratos/driver/configuration"
 
 	"github.com/ory/x/viperx"
 
@@ -29,9 +30,9 @@ import (
 
 	"github.com/ory/x/flagx"
 
-	"github.com/ory/kratos/cmd/daemon"
-	"github.com/ory/kratos/driver"
-	"github.com/ory/kratos/x"
+	"kratos/cmd/daemon"
+	"kratos/driver"
+	"kratos/x"
 )
 
 var logger *logrusx.Logger

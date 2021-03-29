@@ -1,4 +1,4 @@
-module github.com/ory/kratos
+module kratos
 
 go 1.14
 

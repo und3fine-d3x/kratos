@@ -6,10 +6,10 @@ import (
 
 	"github.com/pkg/errors"
 
-	"github.com/ory/kratos/selfservice/flow"
-	"github.com/ory/kratos/selfservice/flow/registration"
-	"github.com/ory/kratos/session"
-	"github.com/ory/kratos/x"
+	"kratos/selfservice/flow"
+	"kratos/selfservice/flow/registration"
+	"kratos/session"
+	"kratos/x"
 )
 
 var (

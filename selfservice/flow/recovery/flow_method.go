@@ -9,7 +9,7 @@ import (
 
 	"github.com/gofrs/uuid"
 
-	"github.com/ory/kratos/selfservice/form"
+	"kratos/selfservice/form"
 )
 
 // swagger:model recoveryFlowMethod

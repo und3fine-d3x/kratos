@@ -3,9 +3,9 @@ package link_test
 import (
 	"github.com/ory/viper"
 
-	"github.com/ory/kratos/driver/configuration"
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/selfservice/flow/recovery"
+	"kratos/driver/configuration"
+	"kratos/identity"
+	"kratos/selfservice/flow/recovery"
 )
 
 func initViper() {

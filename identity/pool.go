@@ -16,7 +16,7 @@ import (
 	"github.com/ory/x/sqlcon"
 	"github.com/ory/x/urlx"
 
-	"github.com/ory/kratos/schema"
+	"kratos/schema"
 
 	"github.com/gofrs/uuid"
 	"github.com/stretchr/testify/assert"
@@ -24,8 +24,8 @@ import (
 
 	"github.com/ory/viper"
 
-	"github.com/ory/kratos/driver/configuration"
-	"github.com/ory/kratos/x"
+	"kratos/driver/configuration"
+	"kratos/x"
 )
 
 type (

@@ -9,7 +9,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ory/kratos/courier"
+	"kratos/courier"
 )
 
 func CourierExpectMessage(t *testing.T, reg interface {

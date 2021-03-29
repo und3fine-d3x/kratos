@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/ory/kratos/x"
+	"kratos/x"
 )
 
 func TestVerifyRequest(t *testing.T) {

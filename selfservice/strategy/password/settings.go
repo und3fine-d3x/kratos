@@ -17,12 +17,12 @@ import (
 	"github.com/ory/x/decoderx"
 	"github.com/ory/x/urlx"
 
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/schema"
-	"github.com/ory/kratos/selfservice/flow"
-	"github.com/ory/kratos/selfservice/flow/settings"
-	"github.com/ory/kratos/selfservice/form"
-	"github.com/ory/kratos/x"
+	"kratos/identity"
+	"kratos/schema"
+	"kratos/selfservice/flow"
+	"kratos/selfservice/flow/settings"
+	"kratos/selfservice/form"
+	"kratos/x"
 )
 
 const (

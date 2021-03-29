@@ -13,16 +13,17 @@ import (
 	"github.com/pkg/errors"
 	"github.com/tidwall/gjson"
 
-	"github.com/ory/kratos/identity"
+	"kratos/identity"
 
 	"github.com/spf13/cobra"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ory/kratos/cmd/cliclient"
-	"github.com/ory/kratos/driver"
-	"github.com/ory/kratos/driver/configuration"
-	"github.com/ory/kratos/internal"
-	"github.com/ory/kratos/internal/testhelpers"
+	"kratos/cmd/cliclient"
+	"kratos/driver"
+	"kratos/driver/configuration"
+	"kratos/internal"
+	"kratos/internal/testhelpers"
+
 	"github.com/ory/viper"
 )
 

@@ -12,7 +12,7 @@ import (
 
 	"github.com/ory/jsonschema/v3"
 
-	"github.com/ory/kratos/driver/configuration"
+	"kratos/driver/configuration"
 
 	"github.com/pkg/errors"
 

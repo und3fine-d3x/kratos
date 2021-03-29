@@ -1,8 +1,8 @@
 package registration
 
 import (
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/session"
+	"kratos/identity"
+	"kratos/session"
 )
 
 // The Response for Registration Flows via API

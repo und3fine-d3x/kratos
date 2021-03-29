@@ -21,9 +21,9 @@ import (
 	"github.com/ory/viper"
 	dhelper "github.com/ory/x/sqlcon/dockertest"
 
-	templates "github.com/ory/kratos/courier/template"
-	"github.com/ory/kratos/driver/configuration"
-	"github.com/ory/kratos/internal"
+	templates "kratos/courier/template"
+	"kratos/driver/configuration"
+	"kratos/internal"
 )
 
 var resources []*dockertest.Resource

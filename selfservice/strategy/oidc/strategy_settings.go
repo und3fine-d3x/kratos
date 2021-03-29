@@ -15,11 +15,11 @@ import (
 	"github.com/ory/jsonschema/v3"
 	"github.com/ory/x/urlx"
 
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/selfservice/flow"
-	"github.com/ory/kratos/selfservice/flow/settings"
-	"github.com/ory/kratos/selfservice/form"
-	"github.com/ory/kratos/x"
+	"kratos/identity"
+	"kratos/selfservice/flow"
+	"kratos/selfservice/flow/settings"
+	"kratos/selfservice/form"
+	"kratos/x"
 )
 
 const (

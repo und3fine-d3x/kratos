@@ -3,7 +3,7 @@ package password
 import (
 	"bufio"
 
-	"github.com/ory/kratos/driver/configuration"
+	"kratos/driver/configuration"
 
 	/* #nosec G505 sha1 is used for k-anonymity */
 	"crypto/sha1"
