@@ -15,9 +15,6 @@
 package serve
 
 import (
-	"os"
-	"strconv"
-
 	"kratos/internal/clihelpers"
 
 	"github.com/ory/x/logrusx"
@@ -76,7 +73,7 @@ func RegisterCommandRecursive(parent *cobra.Command) {
 }
 
 func init() {
-	disableTelemetryEnv, _ := strconv.ParseBool(os.Getenv("DISABLE_TELEMETRY"))
-	serveCmd.PersistentFlags().Bool("disable-telemetry", disableTelemetryEnv, "Disable anonymized telemetry reports - for more information please visit https://www.ory.sh/docs/ecosystem/sqa")
+	// disableTelemetryEnv, _ := strconv.ParseBool(os.Getenv("DISABLE_TELEMETRY"))
+	serveCmd.PersistentFlags().Bool("disable-telemetry", true, "Disable anonymized telemetry reports - for more information please visit https://www.ory.sh/docs/ecosystem/sqa")
 	serveCmd.PersistentFlags().Bool("dev", false, "Disables critical security features to make development easier")
 }
