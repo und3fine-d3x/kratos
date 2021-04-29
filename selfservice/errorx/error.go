@@ -1,9 +1,12 @@
 package errorx
 
 import (
+	"context"
 	"database/sql"
 	"encoding/json"
 	"time"
+
+	"kratos/corp"
 
 	"github.com/gofrs/uuid"
 )
@@ -13,9 +16,8 @@ type ErrorContainer struct {
 	// ID of the error container.
 	//
 	// required: true
-	ID uuid.UUID `db:"id" json:"id"`
-
-	CSRFToken string `db:"csrf_token" json:"-"`
+	ID  uuid.UUID `db:"id" json:"id"`
+	NID uuid.UUID `json:"-" db:"nid"`
 
 	// Errors in the container
 	//
@@ -28,10 +30,11 @@ type ErrorContainer struct {
 	// UpdatedAt is a helper struct field for gobuffalo.pop.
 	UpdatedAt time.Time `json:"-" db:"updated_at"`
 
-	SeenAt  sql.NullTime `json:"-" db:"seen_at"`
-	WasSeen bool         `json:"-" db:"was_seen"`
+	SeenAt    sql.NullTime `json:"-" db:"seen_at"`
+	WasSeen   bool         `json:"-" db:"was_seen"`
+	CSRFToken string       `db:"csrf_token" json:"-"`
 }
 
-func (e ErrorContainer) TableName() string {
-	return "selfservice_errors"
+func (e ErrorContainer) TableName(ctx context.Context) string {
+	return corp.ContextualizeTableName(ctx, "selfservice_errors")
 }

@@ -2,17 +2,17 @@ package link
 
 import (
 	"github.com/ory/x/decoderx"
-
 	"kratos/courier"
-	"kratos/driver/configuration"
+	"kratos/driver/config"
 	"kratos/identity"
 	"kratos/schema"
 	"kratos/selfservice/errorx"
 	"kratos/selfservice/flow/recovery"
 	"kratos/selfservice/flow/settings"
 	"kratos/selfservice/flow/verification"
-	"kratos/selfservice/form"
 	"kratos/session"
+	"kratos/ui/container"
+	"kratos/ui/node"
 	"kratos/x"
 )
 
@@ -27,7 +27,7 @@ var _ verification.PublicHandler = new(Strategy)
 type (
 	// FlowMethod contains the configuration for this selfservice strategy.
 	FlowMethod struct {
-		*form.HTMLForm
+		*container.Container
 	}
 
 	strategyDependencies interface {
@@ -35,6 +35,8 @@ type (
 		x.CSRFTokenGeneratorProvider
 		x.WriterProvider
 		x.LoggingProvider
+
+		config.Provider
 
 		session.HandlerProvider
 		session.ManagementProvider
@@ -62,16 +64,23 @@ type (
 		VerificationTokenPersistenceProvider
 		SenderProvider
 
-		IdentityTraitsSchemas() schema.Schemas
+		schema.IdentityTraitsProvider
 	}
 
 	Strategy struct {
-		c  configuration.Provider
 		d  strategyDependencies
 		dx *decoderx.HTTP
 	}
 )
 
-func NewStrategy(d strategyDependencies, c configuration.Provider) *Strategy {
-	return &Strategy{c: c, d: d, dx: decoderx.NewHTTP()}
+func NewStrategy(d strategyDependencies) *Strategy {
+	return &Strategy{d: d, dx: decoderx.NewHTTP()}
+}
+
+func (s *Strategy) RecoveryNodeGroup() node.Group {
+	return node.RecoveryLinkGroup
+}
+
+func (s *Strategy) VerificationNodeGroup() node.Group {
+	return node.VerificationLinkGroup
 }

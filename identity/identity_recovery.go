@@ -1,7 +1,10 @@
 package identity
 
 import (
+	"context"
 	"time"
+
+	"kratos/corp"
 
 	"github.com/gofrs/uuid"
 )
@@ -34,6 +37,7 @@ type (
 		CreatedAt time.Time `json:"-" faker:"-" db:"created_at"`
 		// UpdatedAt is a helper struct field for gobuffalo.pop.
 		UpdatedAt time.Time `json:"-" faker:"-" db:"updated_at"`
+		NID       uuid.UUID `json:"-"  faker:"-" db:"nid"`
 	}
 )
 
@@ -45,8 +49,8 @@ func (v RecoveryAddressType) HTMLFormInputType() string {
 	return ""
 }
 
-func (a RecoveryAddress) TableName() string {
-	return "identity_recovery_addresses"
+func (a RecoveryAddress) TableName(ctx context.Context) string {
+	return corp.ContextualizeTableName(ctx, "identity_recovery_addresses")
 }
 
 func NewRecoveryEmailAddress(

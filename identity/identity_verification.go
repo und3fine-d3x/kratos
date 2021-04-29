@@ -1,7 +1,10 @@
 package identity
 
 import (
+	"context"
 	"time"
+
+	"kratos/corp"
 
 	"github.com/gofrs/uuid"
 
@@ -47,6 +50,7 @@ type (
 		CreatedAt time.Time `json:"-" faker:"-" db:"created_at"`
 		// UpdatedAt is a helper struct field for gobuffalo.pop.
 		UpdatedAt time.Time `json:"-" faker:"-" db:"updated_at"`
+		NID       uuid.UUID `json:"-"  faker:"-" db:"nid"`
 	}
 )
 
@@ -58,14 +62,11 @@ func (v VerifiableAddressType) HTMLFormInputType() string {
 	return ""
 }
 
-func (a VerifiableAddress) TableName() string {
-	return "identity_verifiable_addresses"
+func (a VerifiableAddress) TableName(ctx context.Context) string {
+	return corp.ContextualizeTableName(ctx, "identity_verifiable_addresses")
 }
 
-func NewVerifiableEmailAddress(
-	value string,
-	identity uuid.UUID,
-) *VerifiableAddress {
+func NewVerifiableEmailAddress(value string, identity uuid.UUID) *VerifiableAddress {
 	return &VerifiableAddress{
 		Value:      value,
 		Verified:   false,
@@ -73,4 +74,12 @@ func NewVerifiableEmailAddress(
 		Via:        VerifiableAddressTypeEmail,
 		IdentityID: identity,
 	}
+}
+
+func (a VerifiableAddress) GetID() uuid.UUID {
+	return a.ID
+}
+
+func (a VerifiableAddress) GetNID() uuid.UUID {
+	return a.NID
 }

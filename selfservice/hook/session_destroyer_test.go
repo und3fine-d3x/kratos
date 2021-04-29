@@ -5,6 +5,8 @@ import (
 	"net/http"
 	"testing"
 
+	"kratos/corpx"
+
 	"github.com/bxcodec/faker/v3"
 	"github.com/gobuffalo/httptest"
 	"github.com/gofrs/uuid"
@@ -12,10 +14,7 @@ import (
 	"github.com/stretchr/testify/require"
 
 	"github.com/ory/x/sqlcon"
-
-	"github.com/ory/viper"
-
-	"kratos/driver/configuration"
+	"kratos/driver/config"
 	"kratos/identity"
 	"kratos/internal"
 	"kratos/selfservice/hook"
@@ -23,14 +22,14 @@ import (
 )
 
 func init() {
-	internal.RegisterFakes()
+	corpx.RegisterFakes()
 }
 
 func TestSessionDestroyer(t *testing.T) {
-	_, reg := internal.NewFastRegistryWithMocks(t)
+	conf, reg := internal.NewFastRegistryWithMocks(t)
 
-	viper.Set(configuration.ViperKeyPublicBaseURL, "http://localhost/")
-	viper.Set(configuration.ViperKeyDefaultIdentitySchemaURL, "file://./stub/stub.schema.json")
+	conf.MustSet(config.ViperKeyPublicBaseURL, "http://localhost/")
+	conf.MustSet(config.ViperKeyDefaultIdentitySchemaURL, "file://./stub/stub.schema.json")
 
 	h := hook.NewSessionDestroyer(reg)
 

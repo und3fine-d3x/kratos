@@ -1,15 +1,18 @@
 package identity
 
 import (
+	"context"
 	"database/sql/driver"
 	"encoding/json"
 	"sync"
 	"time"
 
+	"kratos/corp"
+
 	"github.com/ory/herodot"
 	"github.com/ory/x/sqlxx"
 
-	"kratos/driver/configuration"
+	"kratos/driver/config"
 
 	"github.com/gofrs/uuid"
 	"github.com/pkg/errors"
@@ -18,7 +21,7 @@ import (
 )
 
 type (
-	// Identity represents an ORY Kratos identity
+	// Identity represents an Ory Kratos identity
 	//
 	// An identity can be a real human, a service, an IoT device - everything that
 	// can be described as an "actor" in a system.
@@ -27,10 +30,10 @@ type (
 	Identity struct {
 		l *sync.RWMutex `db:"-" faker:"-"`
 
-		// ID is a unique identifier chosen by you. It can be a URN (e.g. "arn:aws:iam::123456789012"),
-		// a stringified integer (e.g. "123456789012"), a uuid (e.g. "9f425a8d-7efc-4768-8f23-7647a74fdf13"). It is up to you
-		// to pick a format you'd like. It is discouraged to use a personally identifiable value here, like the username
-		// or the email, as this field is immutable.
+		// ID is the identity's unique identifier.
+		//
+		// The Identity ID can not be changed and can not be chosen. This ensures future
+		// compatibility and optimization for distributed stores such as CockroachDB.
 		//
 		// required: true
 		ID uuid.UUID `json:"id" faker:"-" db:"id"`
@@ -72,14 +75,12 @@ type (
 		// ---
 		RecoveryAddresses []RecoveryAddress `json:"recovery_addresses,omitempty" faker:"-" has_many:"identity_recovery_addresses" fk_id:"identity_id"`
 
-		// CredentialsCollection is a helper struct field for gobuffalo.pop.
-		CredentialsCollection CredentialsCollection `json:"-" faker:"-" has_many:"identity_credentials" fk_id:"identity_id"`
-
 		// CreatedAt is a helper struct field for gobuffalo.pop.
 		CreatedAt time.Time `json:"-" db:"created_at"`
 
 		// UpdatedAt is a helper struct field for gobuffalo.pop.
 		UpdatedAt time.Time `json:"-" db:"updated_at"`
+		NID       uuid.UUID `json:"-"  faker:"-" db:"nid"`
 	}
 	Traits json.RawMessage
 )
@@ -113,8 +114,8 @@ func (t *Traits) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (i Identity) TableName() string {
-	return "identities"
+func (i Identity) TableName(ctx context.Context) string {
+	return corp.ContextualizeTableName(ctx, "identities")
 }
 
 func (i *Identity) lock() *sync.RWMutex {
@@ -122,12 +123,6 @@ func (i *Identity) lock() *sync.RWMutex {
 		i.l = new(sync.RWMutex)
 	}
 	return i.l
-}
-
-func (i *Identity) SetSecurityAnswers(answers map[string]string) {
-	i.lock().Lock()
-	defer i.lock().Unlock()
-
 }
 
 func (i *Identity) SetCredentials(t CredentialsType, c Credentials) {
@@ -174,7 +169,7 @@ func (i *Identity) CopyWithoutCredentials() *Identity {
 
 func NewIdentity(traitsSchemaID string) *Identity {
 	if traitsSchemaID == "" {
-		traitsSchemaID = configuration.DefaultIdentityTraitsSchemaID
+		traitsSchemaID = config.DefaultIdentityTraitsSchemaID
 	}
 
 	return &Identity{
@@ -185,4 +180,12 @@ func NewIdentity(traitsSchemaID string) *Identity {
 		VerifiableAddresses: []VerifiableAddress{},
 		l:                   new(sync.RWMutex),
 	}
+}
+
+func (i Identity) GetID() uuid.UUID {
+	return i.ID
+}
+
+func (i Identity) GetNID() uuid.UUID {
+	return i.NID
 }
