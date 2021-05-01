@@ -5,8 +5,8 @@ import (
 
 	"github.com/tidwall/sjson"
 
-	"github.com/ory/kratos/driver/config"
-	"github.com/ory/kratos/schema"
+	"kratos/driver/config"
+	"kratos/schema"
 )
 
 type (

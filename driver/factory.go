@@ -3,14 +3,14 @@ package driver
 import (
 	"context"
 
-	"github.com/ory/kratos/driver/config"
 	"github.com/ory/x/configx"
 	"github.com/ory/x/logrusx"
+	"kratos/driver/config"
 )
 
 func New(ctx context.Context, opts ...configx.OptionModifier) Registry {
-	l := logrusx.New("ORY Kratos", config.Version)
-	c, err := config.New(l, opts...)
+	l := logrusx.New("Ory Kratos", config.Version)
+	c, err := config.New(ctx, l, opts...)
 	if err != nil {
 		l.WithError(err).Fatal("Unable to instantiate configuration.")
 	}

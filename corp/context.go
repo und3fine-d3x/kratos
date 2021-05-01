@@ -4,7 +4,9 @@ import (
 	"context"
 	"net/http"
 
-	"github.com/ory/kratos/driver/config"
+	"github.com/gofrs/uuid"
+
+	"kratos/driver/config"
 )
 
 func ContextualizeTableName(_ context.Context, name string) string {
@@ -19,4 +21,8 @@ func ContextualizeMiddleware(_ context.Context) func(rw http.ResponseWriter, r *
 
 func ContextualizeConfig(ctx context.Context, fb *config.Config) *config.Config {
 	return fb
+}
+
+func ContextualizeNID(_ context.Context, fallback uuid.UUID) uuid.UUID {
+	return fallback
 }

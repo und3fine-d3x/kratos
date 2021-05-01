@@ -7,11 +7,11 @@ import (
 
 	"github.com/tidwall/gjson"
 
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/selfservice/flow/login"
-	"github.com/ory/kratos/selfservice/flow/registration"
-	"github.com/ory/kratos/selfservice/flow/settings"
-	"github.com/ory/kratos/session"
+	"kratos/identity"
+	"kratos/selfservice/flow/login"
+	"kratos/selfservice/flow/registration"
+	"kratos/selfservice/flow/settings"
+	"kratos/session"
 )
 
 var (

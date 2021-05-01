@@ -12,20 +12,20 @@ import (
 
 	"github.com/ory/kratos/corp"
 
-	"github.com/ory/kratos/metrics/prometheus"
+	"kratos/metrics/prometheus"
 
 	"github.com/gobuffalo/pop/v5"
 
-	"github.com/ory/kratos/continuity"
-	"github.com/ory/kratos/hash"
-	"github.com/ory/kratos/schema"
-	"github.com/ory/kratos/selfservice/flow/recovery"
-	"github.com/ory/kratos/selfservice/flow/settings"
-	"github.com/ory/kratos/selfservice/flow/verification"
-	"github.com/ory/kratos/selfservice/hook"
-	"github.com/ory/kratos/selfservice/strategy/link"
-	"github.com/ory/kratos/selfservice/strategy/profile"
-	"github.com/ory/kratos/x"
+	"kratos/continuity"
+	"kratos/hash"
+	"kratos/schema"
+	"kratos/selfservice/flow/recovery"
+	"kratos/selfservice/flow/settings"
+	"kratos/selfservice/flow/verification"
+	"kratos/selfservice/hook"
+	"kratos/selfservice/strategy/link"
+	"kratos/selfservice/strategy/profile"
+	"kratos/x"
 
 	"github.com/cenkalti/backoff"
 	"github.com/gorilla/sessions"
@@ -39,21 +39,21 @@ import (
 
 	"github.com/ory/x/logrusx"
 
-	"github.com/ory/kratos/courier"
-	"github.com/ory/kratos/persistence"
-	"github.com/ory/kratos/persistence/sql"
-	"github.com/ory/kratos/selfservice/flow/login"
-	"github.com/ory/kratos/selfservice/flow/logout"
-	"github.com/ory/kratos/selfservice/flow/registration"
-	"github.com/ory/kratos/selfservice/strategy/oidc"
+	"kratos/courier"
+	"kratos/persistence"
+	"kratos/persistence/sql"
+	"kratos/selfservice/flow/login"
+	"kratos/selfservice/flow/logout"
+	"kratos/selfservice/flow/registration"
+	"kratos/selfservice/strategy/oidc"
 
 	"github.com/ory/herodot"
 
-	"github.com/ory/kratos/driver/config"
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/selfservice/errorx"
-	password2 "github.com/ory/kratos/selfservice/strategy/password"
-	"github.com/ory/kratos/session"
+	"kratos/driver/config"
+	"kratos/identity"
+	"kratos/selfservice/errorx"
+	password2 "kratos/selfservice/strategy/password"
+	"kratos/session"
 )
 
 type RegistryDefault struct {
@@ -330,7 +330,7 @@ func (m *RegistryDefault) Writer() herodot.Writer {
 
 func (m *RegistryDefault) Logger() *logrusx.Logger {
 	if m.l == nil {
-		m.l = logrusx.New("ORY Kratos", config.Version)
+		m.l = logrusx.New("Ory Kratos", config.Version)
 	}
 	return m.l
 }
@@ -358,7 +358,11 @@ func (m *RegistryDefault) SessionHandler() *session.Handler {
 
 func (m *RegistryDefault) Hasher() hash.Hasher {
 	if m.passwordHasher == nil {
-		m.passwordHasher = hash.NewHasherArgon2(m)
+		if m.c.HasherPasswordHashingAlgorithm() == "bcrypt" {
+			m.passwordHasher = hash.NewHasherBcrypt(m)
+		} else {
+			m.passwordHasher = hash.NewHasherArgon2(m)
+		}
 	}
 	return m.passwordHasher
 }
@@ -495,21 +499,28 @@ func (m *RegistryDefault) Init(ctx context.Context) error {
 				m.Logger().WithError(err).Warnf("Unable to initialize persister, retrying.")
 				return err
 			}
+
 			if err := p.Ping(); err != nil {
 				m.Logger().WithError(err).Warnf("Unable to ping database, retrying.")
 				return err
 			}
 
+			net, err := p.DetermineNetwork(ctx)
+			if err != nil {
+				m.Logger().WithError(err).Warnf("Unable to determine network, retrying.")
+				return err
+			}
+
 			// if dsn is memory we have to run the migrations on every start
 			if dbal.IsMemorySQLite(m.Config(ctx).DSN()) || m.Config(ctx).DSN() == dbal.SQLiteInMemory || m.Config(ctx).DSN() == dbal.SQLiteSharedInMemory || m.Config(ctx).DSN() == "memory" {
-				m.Logger().Infoln("ORY Kratos is running migrations on every startup as DSN is memory. This means your data is lost when Kratos terminates.")
+				m.Logger().Infoln("Ory Kratos is running migrations on every startup as DSN is memory. This means your data is lost when Kratos terminates.")
 				if err := p.MigrateUp(ctx); err != nil {
 					m.Logger().WithError(err).Warnf("Unable to run migrations, retrying.")
 					return err
 				}
 			}
 
-			m.persister = p
+			m.persister = p.WithNetworkID(net.ID)
 			return nil
 		}, bc),
 	)

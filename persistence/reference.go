@@ -3,21 +3,25 @@ package persistence
 import (
 	"context"
 
+	"github.com/ory/x/networkx"
+
+	"github.com/gofrs/uuid"
+
 	"github.com/gobuffalo/pop/v5"
 
 	"github.com/ory/x/popx"
 
-	"github.com/ory/kratos/continuity"
-	"github.com/ory/kratos/courier"
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/selfservice/errorx"
-	"github.com/ory/kratos/selfservice/flow/login"
-	"github.com/ory/kratos/selfservice/flow/recovery"
-	"github.com/ory/kratos/selfservice/flow/registration"
-	"github.com/ory/kratos/selfservice/flow/settings"
-	"github.com/ory/kratos/selfservice/flow/verification"
-	"github.com/ory/kratos/selfservice/strategy/link"
-	"github.com/ory/kratos/session"
+	"kratos/continuity"
+	"kratos/courier"
+	"kratos/identity"
+	"kratos/selfservice/errorx"
+	"kratos/selfservice/flow/login"
+	"kratos/selfservice/flow/recovery"
+	"kratos/selfservice/flow/registration"
+	"kratos/selfservice/flow/settings"
+	"kratos/selfservice/flow/verification"
+	"kratos/selfservice/strategy/link"
+	"kratos/session"
 )
 
 type Provider interface {
@@ -46,4 +50,11 @@ type Persister interface {
 	Migrator() *popx.Migrator
 	GetConnection(ctx context.Context) *pop.Connection
 	Transaction(ctx context.Context, callback func(ctx context.Context, connection *pop.Connection) error) error
+	Networker
+}
+
+type Networker interface {
+	WithNetworkID(sid uuid.UUID) Persister
+	NetworkID() uuid.UUID
+	DetermineNetwork(ctx context.Context) (*networkx.Network, error)
 }

@@ -3,7 +3,7 @@ package testhelpers
 import (
 	"testing"
 
-	"github.com/ory/kratos/driver/config"
+	"kratos/driver/config"
 )
 
 // SetDefaultIdentitySchema sets the identity schemas in viper config:

@@ -1,9 +1,15 @@
 package link
 
 import (
+	"context"
 	"net/http"
 	"testing"
 	"time"
+
+	"github.com/ory/x/configx"
+
+	"github.com/ory/x/logrusx"
+	"kratos/driver/config"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
@@ -11,15 +17,17 @@ import (
 	"github.com/ory/x/stringslice"
 	"github.com/ory/x/urlx"
 
-	"github.com/ory/kratos/selfservice/flow"
-	"github.com/ory/kratos/selfservice/flow/recovery"
+	"kratos/selfservice/flow"
+	"kratos/selfservice/flow/recovery"
 )
 
 func TestRecoveryToken(t *testing.T) {
+	conf, err := config.New(context.Background(), logrusx.New("", ""), configx.SkipValidation())
+	require.NoError(t, err)
 	req := &http.Request{URL: urlx.ParseOrPanic("https://www.ory.sh/")}
 	t.Run("func=NewSelfServiceRecoveryToken", func(t *testing.T) {
 		t.Run("case=creates unique tokens", func(t *testing.T) {
-			f, err := recovery.NewFlow(time.Hour, "", req, nil, flow.TypeBrowser)
+			f, err := recovery.NewFlow(conf, time.Hour, "", req, nil, flow.TypeBrowser)
 			require.NoError(t, err)
 
 			tokens := make([]string, 10)
@@ -32,7 +40,7 @@ func TestRecoveryToken(t *testing.T) {
 	})
 	t.Run("method=Valid", func(t *testing.T) {
 		t.Run("case=is invalid when the flow is expired", func(t *testing.T) {
-			f, err := recovery.NewFlow(-time.Hour, "", req, nil, flow.TypeBrowser)
+			f, err := recovery.NewFlow(conf, -time.Hour, "", req, nil, flow.TypeBrowser)
 			require.NoError(t, err)
 
 			token := NewSelfServiceRecoveryToken(nil, f)

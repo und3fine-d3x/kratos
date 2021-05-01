@@ -12,7 +12,7 @@ import (
 	"github.com/ory/x/stringsx"
 	"github.com/ory/x/urlx"
 
-	"github.com/ory/kratos/driver/config"
+	"kratos/driver/config"
 )
 
 type secureRedirectOptions struct {

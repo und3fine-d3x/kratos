@@ -3,6 +3,7 @@ package oidc
 import (
 	"bytes"
 	"encoding/json"
+	"fmt"
 	"net/http"
 
 	"github.com/imdario/mergo"
@@ -11,7 +12,7 @@ import (
 
 	"github.com/ory/x/decoderx"
 
-	"github.com/ory/kratos/identity"
+	"kratos/identity"
 )
 
 func decoderRegistration(ref string) (decoderx.HTTPDecoderOption, error) {
@@ -64,6 +65,13 @@ func merge(userFormValues string, openIDProviderValues json.RawMessage, option d
 	var decodedTraits map[string]interface{}
 	if err := json.NewDecoder(bytes.NewBuffer(openIDProviderValues)).Decode(&decodedTraits); err != nil {
 		return nil, err
+	}
+
+	// Do not override empty fields -> we remove them before merge
+	for k, v := range df.Traits {
+		if len(fmt.Sprintf("%v", v)) == 0 {
+			delete(df.Traits, k)
+		}
 	}
 
 	// decoderForm (coming from POST request) overrides decodedTraits (coming from OP)

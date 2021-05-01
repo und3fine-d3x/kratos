@@ -10,12 +10,12 @@ import (
 
 	"github.com/ory/x/sqlcon"
 
-	"github.com/ory/kratos/driver/config"
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/schema"
-	"github.com/ory/kratos/selfservice/flow"
-	"github.com/ory/kratos/session"
-	"github.com/ory/kratos/x"
+	"kratos/driver/config"
+	"kratos/identity"
+	"kratos/schema"
+	"kratos/selfservice/flow"
+	"kratos/session"
+	"kratos/x"
 )
 
 type (
@@ -123,6 +123,7 @@ func (e *HookExecutor) PostRegistrationHook(w http.ResponseWriter, r *http.Reque
 		}
 		return err
 	}
+
 	e.d.Audit().
 		WithRequest(r).
 		WithField("identity_id", i.ID).

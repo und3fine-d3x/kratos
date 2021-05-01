@@ -12,14 +12,14 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ory/kratos/driver/config"
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/internal"
-	"github.com/ory/kratos/internal/testhelpers"
-	"github.com/ory/kratos/selfservice/flow/logout"
-	"github.com/ory/kratos/session"
-	"github.com/ory/kratos/x"
 	"github.com/ory/nosurf"
+	"kratos/driver/config"
+	"kratos/identity"
+	"kratos/internal"
+	"kratos/internal/testhelpers"
+	"kratos/selfservice/flow/logout"
+	"kratos/session"
+	"kratos/x"
 )
 
 func TestLogoutHandler(t *testing.T) {

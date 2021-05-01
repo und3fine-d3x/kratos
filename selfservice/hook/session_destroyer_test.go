@@ -13,12 +13,12 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ory/kratos/driver/config"
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/internal"
-	"github.com/ory/kratos/selfservice/hook"
-	"github.com/ory/kratos/session"
 	"github.com/ory/x/sqlcon"
+	"kratos/driver/config"
+	"kratos/identity"
+	"kratos/internal"
+	"kratos/selfservice/hook"
+	"kratos/session"
 )
 
 func init() {

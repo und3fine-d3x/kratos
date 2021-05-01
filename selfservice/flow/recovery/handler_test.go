@@ -17,13 +17,13 @@ import (
 
 	"github.com/ory/x/assertx"
 
-	"github.com/ory/kratos/driver/config"
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/internal"
-	"github.com/ory/kratos/internal/testhelpers"
-	"github.com/ory/kratos/selfservice/flow"
-	"github.com/ory/kratos/selfservice/flow/recovery"
-	"github.com/ory/kratos/x"
+	"kratos/driver/config"
+	"kratos/identity"
+	"kratos/internal"
+	"kratos/internal/testhelpers"
+	"kratos/selfservice/flow"
+	"kratos/selfservice/flow/recovery"
+	"kratos/x"
 )
 
 func init() {
@@ -121,7 +121,7 @@ func TestInitFlow(t *testing.T) {
 			assertion(body, false, false)
 			assert.Contains(t, res.Request.URL.String(), recoveryTS.URL)
 		})
-		t.Run("case=does not set forced flag on authenticated request with refresh=false", func(t *testing.T) {
+		t.Run("case=fails on authenticated request", func(t *testing.T) {
 			res, _ := initAuthenticatedFlow(t, false)
 			assert.Contains(t, res.Request.URL.String(), "https://www.ory.sh")
 		})
@@ -150,12 +150,11 @@ func TestGetFlow(t *testing.T) {
 	}
 
 	assertFlowPayload := func(t *testing.T, body []byte) {
-		assert.Equal(t, "link", gjson.GetBytes(body, "methods.link.method").String(), "%s", body)
-		assert.NotEmpty(t, gjson.GetBytes(body, "methods.link.config.fields.#(name==csrf_token).value").String(), "%s", body)
+		assert.NotEmpty(t, gjson.GetBytes(body, "ui.nodes.#(attributes.name==csrf_token).attributes.value").String(), "%s", body)
 		assert.NotEmpty(t, gjson.GetBytes(body, "id").String(), "%s", body)
 		assert.Empty(t, gjson.GetBytes(body, "headers").Value(), "%s", body)
-		assert.Contains(t, gjson.GetBytes(body, "methods.link.config.action").String(), gjson.GetBytes(body, "id").String(), "%s", body)
-		assert.Contains(t, gjson.GetBytes(body, "methods.link.config.action").String(), public.URL, "%s", body)
+		assert.Contains(t, gjson.GetBytes(body, "ui.action").String(), gjson.GetBytes(body, "id").String(), "%s", body)
+		assert.Contains(t, gjson.GetBytes(body, "ui.action").String(), public.URL, "%s", body)
 	}
 
 	assertExpiredPayload := func(t *testing.T, res *http.Response, body []byte) {

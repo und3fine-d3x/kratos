@@ -3,7 +3,7 @@ package driver
 import (
 	"context"
 
-	"github.com/ory/kratos/selfservice/flow/settings"
+	"kratos/selfservice/flow/settings"
 )
 
 func (m *RegistryDefault) PostSettingsPrePersistHooks(ctx context.Context, settingsType string) (b []settings.PostHookPrePersistExecutor) {

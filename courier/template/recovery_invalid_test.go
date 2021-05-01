@@ -6,8 +6,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ory/kratos/courier/template"
-	"github.com/ory/kratos/internal"
+	"kratos/courier/template"
+	"kratos/internal"
 )
 
 func TestRecoverInvalid(t *testing.T) {

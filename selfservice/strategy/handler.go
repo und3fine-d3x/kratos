@@ -6,8 +6,8 @@ import (
 	"github.com/julienschmidt/httprouter"
 
 	"github.com/ory/herodot"
-	"github.com/ory/kratos/driver/config"
-	"github.com/ory/kratos/x"
+	"kratos/driver/config"
+	"kratos/x"
 )
 
 const EndpointDisabledMessage = "This endpoint was disabled by system administrator. Please check your url or contact the system administrator to enable it."

@@ -11,10 +11,10 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/ory/kratos/driver"
-	"github.com/ory/kratos/driver/config"
 	"github.com/ory/x/cmdx"
 	"github.com/ory/x/flagx"
+	"kratos/driver"
+	"kratos/driver/config"
 )
 
 type MigrateHandler struct{}

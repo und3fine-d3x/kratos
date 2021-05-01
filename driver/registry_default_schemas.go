@@ -4,7 +4,7 @@ import (
 	"context"
 	"net/url"
 
-	"github.com/ory/kratos/schema"
+	"kratos/schema"
 )
 
 func (m *RegistryDefault) IdentityTraitsSchemas(ctx context.Context) schema.Schemas {

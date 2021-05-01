@@ -3,10 +3,11 @@ package password
 import (
 	"bufio"
 	"context"
+	"time"
 
 	"github.com/hashicorp/go-retryablehttp"
 
-	"github.com/ory/kratos/driver/config"
+	"kratos/driver/config"
 
 	/* #nosec G505 sha1 is used for k-anonymity */
 	"crypto/sha1"
@@ -68,7 +69,7 @@ type validatorDependencies interface {
 
 func NewDefaultPasswordValidatorStrategy(reg validatorDependencies) *DefaultPasswordValidator {
 	return &DefaultPasswordValidator{
-		Client:                    httpx.NewResilientClient(),
+		Client:                    httpx.NewResilientClient(httpx.ResilientClientWithConnectionTimeout(time.Second)),
 		reg:                       reg,
 		hashes:                    map[string]int64{},
 		minIdentifierPasswordDist: 5, maxIdentifierPasswordSubstrThreshold: 0.5}

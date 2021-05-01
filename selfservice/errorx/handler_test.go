@@ -16,11 +16,11 @@ import (
 	"github.com/tidwall/gjson"
 
 	"github.com/ory/herodot"
-	"github.com/ory/kratos/internal"
-	"github.com/ory/kratos/selfservice/errorx"
-	"github.com/ory/kratos/x"
 	"github.com/ory/nosurf"
 	"github.com/ory/x/errorsx"
+	"kratos/internal"
+	"kratos/selfservice/errorx"
+	"kratos/x"
 )
 
 func TestHandler(t *testing.T) {

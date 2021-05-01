@@ -1,9 +1,10 @@
 package template
 
 import (
+	"encoding/json"
 	"path/filepath"
 
-	"github.com/ory/kratos/driver/config"
+	"kratos/driver/config"
 )
 
 type (
@@ -30,4 +31,12 @@ func (t *RecoveryInvalid) EmailSubject() (string, error) {
 
 func (t *RecoveryInvalid) EmailBody() (string, error) {
 	return loadTextTemplate(filepath.Join(t.c.CourierTemplatesRoot(), "recovery/invalid/email.body.gotmpl"), t.m)
+}
+
+func (t *RecoveryInvalid) EmailBodyPlaintext() (string, error) {
+	return loadTextTemplate(filepath.Join(t.c.CourierTemplatesRoot(), "recovery/invalid/email.body.plaintext.gotmpl"), t.m)
+}
+
+func (t *RecoveryInvalid) MarshalJSON() ([]byte, error) {
+	return json.Marshal(t.m)
 }

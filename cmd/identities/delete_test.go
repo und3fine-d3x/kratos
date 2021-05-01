@@ -9,10 +9,10 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ory/kratos/driver/config"
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/x"
 	"github.com/ory/x/sqlcon"
+	"kratos/driver/config"
+	"kratos/identity"
+	"kratos/x"
 )
 
 func TestDeleteCmd(t *testing.T) {
@@ -49,6 +49,6 @@ func TestDeleteCmd(t *testing.T) {
 	t.Run("case=fails with unknown ID", func(t *testing.T) {
 		stdErr := execErr(t, DeleteCmd, x.NewUUID().String())
 
-		assert.Contains(t, stdErr, "[DELETE /identities/{id}][404] deleteIdentityNotFound", stdErr)
+		assert.Contains(t, stdErr, "404 Not Found", stdErr)
 	})
 }

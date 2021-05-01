@@ -9,9 +9,9 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ory/kratos/driver/config"
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/x"
+	"kratos/driver/config"
+	"kratos/identity"
+	"kratos/x"
 )
 
 type PersistenceProvider interface {

@@ -11,9 +11,9 @@ import (
 	"github.com/julienschmidt/httprouter"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ory/kratos/driver/config"
-	. "github.com/ory/kratos/identity"
-	"github.com/ory/kratos/internal"
+	"kratos/driver/config"
+	. "kratos/identity"
+	"kratos/internal"
 )
 
 func TestSchemaValidator(t *testing.T) {

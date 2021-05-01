@@ -10,7 +10,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ory/kratos/identity"
+	"kratos/identity"
 )
 
 func TestListCmd(t *testing.T) {
@@ -43,7 +43,7 @@ func TestListCmd(t *testing.T) {
 
 		for _, id := range ids {
 			// exactly one of page 1 and 2 should contain the id
-			assert.True(t, strings.Contains(stdoutP1, id) != strings.Contains(stdoutP2, id))
+			assert.True(t, strings.Contains(stdoutP1, id) != strings.Contains(stdoutP2, id), "%s \n %s", stdoutP1, stdoutP2)
 		}
 	})
 }

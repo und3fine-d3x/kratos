@@ -5,13 +5,13 @@ import (
 	"encoding/json"
 	"testing"
 
-	"github.com/ory/kratos/x"
+	"kratos/x"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ory/kratos/driver/config"
-	"github.com/ory/kratos/identity"
+	"kratos/driver/config"
+	"kratos/identity"
 )
 
 func TestGetCmd(t *testing.T) {
@@ -43,6 +43,6 @@ func TestGetCmd(t *testing.T) {
 	t.Run("case=fails with unknown ID", func(t *testing.T) {
 		stdErr := execErr(t, GetCmd, x.NewUUID().String())
 
-		assert.Contains(t, stdErr, "getIdentityNotFound", stdErr)
+		assert.Contains(t, stdErr, "404 Not Found", stdErr)
 	})
 }

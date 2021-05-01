@@ -4,16 +4,20 @@ import (
 	"context"
 	"net/http"
 
+	"kratos/ui/node"
+
 	"github.com/pkg/errors"
 
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/x"
+	"kratos/identity"
+	"kratos/x"
 )
 
 type Strategy interface {
 	ID() identity.CredentialsType
+	NodeGroup() node.Group
 	RegisterRegistrationRoutes(*x.RouterPublic)
 	PopulateRegistrationMethod(r *http.Request, sr *Flow) error
+	Register(w http.ResponseWriter, r *http.Request, f *Flow, i *identity.Identity) (err error)
 }
 
 type Strategies []Strategy
@@ -46,4 +50,5 @@ func (s Strategies) RegisterPublicRoutes(r *x.RouterPublic) {
 
 type StrategyProvider interface {
 	RegistrationStrategies(ctx context.Context) Strategies
+	AllRegistrationStrategies() Strategies
 }

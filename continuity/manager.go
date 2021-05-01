@@ -10,7 +10,7 @@ import (
 	"github.com/gofrs/uuid"
 	"github.com/pkg/errors"
 
-	"github.com/ory/kratos/identity"
+	"kratos/identity"
 )
 
 type ManagementProvider interface {

@@ -5,11 +5,11 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/ory/kratos/persistence/sql"
+	"kratos/persistence/sql"
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/ory/kratos/identity"
+	"kratos/identity"
 )
 
 func TestCredentialTypes(t *testing.T) {

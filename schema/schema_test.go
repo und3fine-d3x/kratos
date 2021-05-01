@@ -7,8 +7,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ory/kratos/driver/config"
 	"github.com/ory/x/urlx"
+	"kratos/driver/config"
 )
 
 func TestSchemas_GetByID(t *testing.T) {

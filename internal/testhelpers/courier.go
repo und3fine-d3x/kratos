@@ -9,7 +9,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ory/kratos/courier"
+	"kratos/courier"
 )
 
 func CourierExpectMessage(t *testing.T, reg interface {
@@ -28,7 +28,7 @@ func CourierExpectLinkInMessage(t *testing.T, message *courier.Message, offset i
 	if offset == 0 {
 		offset++
 	}
-	match := regexp.MustCompile(`<a href="([^"]+)">`).FindStringSubmatch(message.Body)
+	match := regexp.MustCompile(`(http[^\s]+)`).FindStringSubmatch(message.Body)
 	require.Len(t, match, offset*2)
 
 	return match[offset]

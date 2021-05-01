@@ -9,11 +9,11 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ory/kratos/driver/config"
-	"github.com/ory/kratos/internal"
-	"github.com/ory/kratos/x"
 	"github.com/ory/nosurf"
 	"github.com/ory/x/randx"
+	"kratos/driver/config"
+	"kratos/internal"
+	"kratos/x"
 )
 
 func TestNosurfBaseCookieHandler(t *testing.T) {

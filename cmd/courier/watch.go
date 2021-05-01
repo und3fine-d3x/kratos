@@ -9,15 +9,15 @@ import (
 	"github.com/urfave/negroni"
 
 	"github.com/ory/graceful"
-	"github.com/ory/kratos/driver"
-	"github.com/ory/kratos/x"
 	"github.com/ory/x/configx"
 	"github.com/ory/x/reqlog"
+	"kratos/driver"
+	"kratos/x"
 )
 
 var watchCmd = &cobra.Command{
 	Use:   "watch",
-	Short: "Starts the ORY Kratos message courier",
+	Short: "Starts the Ory Kratos message courier",
 	Run: func(cmd *cobra.Command, args []string) {
 		r := driver.New(cmd.Context(), configx.WithFlags(cmd.Flags()))
 		StartCourier(cmd.Context(), r)

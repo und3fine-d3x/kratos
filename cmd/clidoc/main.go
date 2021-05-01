@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/ory/kratos/cmd"
+	"kratos/cmd"
 
 	"github.com/ory/x/clidoc"
 )

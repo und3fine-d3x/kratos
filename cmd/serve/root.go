@@ -15,26 +15,26 @@
 package serve
 
 import (
-	"github.com/ory/kratos/driver/config"
 	"github.com/ory/x/configx"
+	"kratos/driver/config"
 
 	"github.com/spf13/cobra"
 
-	"github.com/ory/kratos/cmd/daemon"
-	"github.com/ory/kratos/driver"
+	"kratos/cmd/daemon"
+	"kratos/driver"
 )
 
 // serveCmd represents the serve command
 var serveCmd = &cobra.Command{
 	Use:   "serve",
-	Short: "Run the ORY Kratos server",
+	Short: "Run the Ory Kratos server",
 	Run: func(cmd *cobra.Command, args []string) {
 		d := driver.New(cmd.Context(), configx.WithFlags(cmd.Flags()))
 
 		if d.Config(cmd.Context()).IsInsecureDevMode() {
 			d.Logger().Warn(`
 
-YOU ARE RUNNING ORY KRATOS IN DEV MODE.
+YOU ARE RUNNING Ory KRATOS IN DEV MODE.
 SECURITY IS DISABLED.
 DON'T DO THIS IN PRODUCTION!
 

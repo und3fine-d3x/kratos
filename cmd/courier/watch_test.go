@@ -9,7 +9,7 @@ import (
 	"github.com/phayes/freeport"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ory/kratos/internal"
+	"kratos/internal"
 )
 
 func TestStartCourier(t *testing.T) {

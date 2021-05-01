@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/ory/kratos/driver/config"
+	"kratos/driver/config"
 )
 
 func StrategyEnable(t *testing.T, c *config.Config, strategy string, enable bool) {

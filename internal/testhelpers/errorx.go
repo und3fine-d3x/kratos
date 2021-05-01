@@ -13,10 +13,10 @@ import (
 
 	"github.com/ory/herodot"
 
-	"github.com/ory/kratos/driver/config"
-	"github.com/ory/kratos/selfservice/errorx"
-	"github.com/ory/kratos/session"
-	"github.com/ory/kratos/x"
+	"kratos/driver/config"
+	"kratos/selfservice/errorx"
+	"kratos/session"
+	"kratos/x"
 )
 
 func NewErrorTestServer(t *testing.T, reg interface {

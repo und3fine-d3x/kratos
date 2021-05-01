@@ -13,12 +13,12 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ory/kratos/driver"
-	"github.com/ory/kratos/driver/config"
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/selfservice/flow/login"
-	"github.com/ory/kratos/selfservice/flow/registration"
-	"github.com/ory/kratos/selfservice/flow/settings"
+	"kratos/driver"
+	"kratos/driver/config"
+	"kratos/identity"
+	"kratos/selfservice/flow/login"
+	"kratos/selfservice/flow/registration"
+	"kratos/selfservice/flow/settings"
 )
 
 func TestSelfServicePreHook(

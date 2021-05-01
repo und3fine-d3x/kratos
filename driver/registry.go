@@ -3,39 +3,39 @@ package driver
 import (
 	"context"
 
-	"github.com/ory/kratos/metrics/prometheus"
 	"github.com/ory/x/tracing"
+	"kratos/metrics/prometheus"
 
 	"github.com/gorilla/sessions"
 	"github.com/pkg/errors"
 
 	"github.com/ory/x/logrusx"
 
-	"github.com/ory/kratos/continuity"
-	"github.com/ory/kratos/courier"
-	"github.com/ory/kratos/hash"
-	"github.com/ory/kratos/schema"
-	"github.com/ory/kratos/selfservice/flow/recovery"
-	"github.com/ory/kratos/selfservice/flow/settings"
-	"github.com/ory/kratos/selfservice/flow/verification"
-	"github.com/ory/kratos/selfservice/strategy/link"
+	"kratos/continuity"
+	"kratos/courier"
+	"kratos/hash"
+	"kratos/schema"
+	"kratos/selfservice/flow/recovery"
+	"kratos/selfservice/flow/settings"
+	"kratos/selfservice/flow/verification"
+	"kratos/selfservice/strategy/link"
 
 	"github.com/ory/x/healthx"
 
-	"github.com/ory/kratos/persistence"
-	"github.com/ory/kratos/selfservice/flow/login"
-	"github.com/ory/kratos/selfservice/flow/logout"
-	"github.com/ory/kratos/selfservice/flow/registration"
+	"kratos/persistence"
+	"kratos/selfservice/flow/login"
+	"kratos/selfservice/flow/logout"
+	"kratos/selfservice/flow/registration"
 
-	"github.com/ory/kratos/x"
+	"kratos/x"
 
 	"github.com/ory/x/dbal"
 
-	"github.com/ory/kratos/driver/config"
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/selfservice/errorx"
-	password2 "github.com/ory/kratos/selfservice/strategy/password"
-	"github.com/ory/kratos/session"
+	"kratos/driver/config"
+	"kratos/identity"
+	"kratos/selfservice/errorx"
+	password2 "kratos/selfservice/strategy/password"
+	"kratos/session"
 )
 
 type Registry interface {

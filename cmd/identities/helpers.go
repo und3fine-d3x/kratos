@@ -13,16 +13,16 @@ import (
 	"github.com/pkg/errors"
 	"github.com/tidwall/gjson"
 
-	"github.com/ory/kratos/identity"
+	"kratos/identity"
 
 	"github.com/spf13/cobra"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ory/kratos/cmd/cliclient"
-	"github.com/ory/kratos/driver"
-	"github.com/ory/kratos/driver/config"
-	"github.com/ory/kratos/internal"
-	"github.com/ory/kratos/internal/testhelpers"
+	"kratos/cmd/cliclient"
+	"kratos/driver"
+	"kratos/driver/config"
+	"kratos/internal"
+	"kratos/internal/testhelpers"
 )
 
 func parseIdentities(raw []byte) (rawIdentities []string) {
@@ -64,7 +64,7 @@ func readIdentities(cmd *cobra.Command, args []string) (map[string]string, error
 }
 
 func setup(t *testing.T, cmd *cobra.Command) driver.Registry {
-	conf, reg := internal.NewRegistryDefaultWithDSN(t, config.DefaultSQLiteMemoryDSN)
+	conf, reg := internal.NewFastRegistryWithMocks(t)
 	_, admin := testhelpers.NewKratosServerWithCSRF(t, reg)
 	conf.MustSet(config.ViperKeyDefaultIdentitySchemaURL, "file://./stubs/identity.schema.json")
 	// setup command

@@ -8,7 +8,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ory/kratos/internal"
+	"kratos/internal"
 
 	"github.com/bxcodec/faker/v3"
 	"github.com/google/uuid"
@@ -17,10 +17,10 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ory/kratos/driver/config"
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/session"
-	"github.com/ory/kratos/x"
+	"kratos/driver/config"
+	"kratos/identity"
+	"kratos/session"
+	"kratos/x"
 )
 
 type mockDeps interface {

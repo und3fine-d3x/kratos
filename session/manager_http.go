@@ -6,14 +6,14 @@ import (
 
 	"github.com/pkg/errors"
 
-	"github.com/ory/kratos/driver/config"
+	"kratos/driver/config"
 
 	"github.com/ory/x/sqlcon"
 
 	"github.com/ory/herodot"
 
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/x"
+	"kratos/identity"
+	"kratos/x"
 )
 
 type (

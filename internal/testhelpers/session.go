@@ -9,10 +9,10 @@ import (
 	"github.com/gobuffalo/httptest"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ory/kratos/driver"
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/session"
-	"github.com/ory/kratos/x"
+	"kratos/driver"
+	"kratos/identity"
+	"kratos/session"
+	"kratos/x"
 )
 
 type SessionLifespanProvider struct {

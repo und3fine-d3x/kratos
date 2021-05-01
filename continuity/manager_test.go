@@ -19,11 +19,11 @@ import (
 	"github.com/ory/herodot"
 	"github.com/ory/x/logrusx"
 
-	"github.com/ory/kratos/continuity"
-	"github.com/ory/kratos/driver/config"
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/internal"
-	"github.com/ory/kratos/x"
+	"kratos/continuity"
+	"kratos/driver/config"
+	"kratos/identity"
+	"kratos/internal"
+	"kratos/x"
 )
 
 type persisterTestCase struct {

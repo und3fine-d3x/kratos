@@ -16,11 +16,11 @@
 package main
 
 import (
-	"github.com/ory/kratos/driver"
 	"github.com/ory/x/dbal"
 	"github.com/ory/x/profilex"
+	"kratos/driver"
 
-	"github.com/ory/kratos/cmd"
+	"kratos/cmd"
 )
 
 func main() {

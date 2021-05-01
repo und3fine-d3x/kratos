@@ -5,11 +5,11 @@ import (
 	"net/http"
 	"net/url"
 
-	"github.com/ory/kratos/driver/config"
+	"kratos/driver/config"
 
 	"github.com/ory/x/urlx"
 
-	"github.com/ory/kratos/x"
+	"kratos/x"
 )
 
 type (

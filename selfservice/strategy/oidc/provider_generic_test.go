@@ -9,8 +9,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ory/kratos/selfservice/flow/login"
-	"github.com/ory/kratos/x"
+	"kratos/selfservice/flow/login"
+	"kratos/x"
 )
 
 func makeOIDCClaims() json.RawMessage {

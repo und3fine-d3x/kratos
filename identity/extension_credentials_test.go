@@ -8,8 +8,8 @@ import (
 	"github.com/ory/jsonschema/v3"
 	_ "github.com/ory/jsonschema/v3/fileloader"
 
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/schema"
+	"kratos/identity"
+	"kratos/schema"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

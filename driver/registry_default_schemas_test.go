@@ -6,10 +6,10 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/ory/kratos/driver/config"
-	"github.com/ory/kratos/internal"
-	"github.com/ory/kratos/schema"
 	"github.com/ory/x/urlx"
+	"kratos/driver/config"
+	"kratos/internal"
+	"kratos/schema"
 )
 
 func TestRegistryDefault_IdentityTraitsSchemas(t *testing.T) {

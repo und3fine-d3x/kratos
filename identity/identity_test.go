@@ -3,7 +3,7 @@ package identity
 import (
 	"testing"
 
-	"github.com/ory/kratos/driver/config"
+	"kratos/driver/config"
 
 	"github.com/stretchr/testify/assert"
 )

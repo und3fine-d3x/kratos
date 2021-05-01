@@ -12,8 +12,8 @@ import (
 
 	"github.com/ory/herodot"
 
-	"github.com/ory/kratos/driver/config"
-	"github.com/ory/kratos/x"
+	"kratos/driver/config"
+	"kratos/x"
 )
 
 type (
@@ -125,7 +125,7 @@ type whoamiParameters struct {
 	// in: header
 	Cookie string `json:"Cookie"`
 
-	// in: authorization
+	// in: header
 	Authorization string `json:"Authorization"`
 }
 

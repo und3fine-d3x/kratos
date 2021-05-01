@@ -12,8 +12,8 @@ import (
 	"github.com/ory/herodot"
 	"github.com/ory/x/sqlcon"
 
-	"github.com/ory/kratos/session"
-	"github.com/ory/kratos/x"
+	"kratos/session"
+	"kratos/x"
 )
 
 var _ Manager = new(ManagerCookie)

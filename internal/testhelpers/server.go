@@ -6,9 +6,9 @@ import (
 
 	"github.com/gobuffalo/httptest"
 
-	"github.com/ory/kratos/driver"
-	"github.com/ory/kratos/driver/config"
-	"github.com/ory/kratos/x"
+	"kratos/driver"
+	"kratos/driver/config"
+	"kratos/x"
 )
 
 func NewKratosServer(t *testing.T, reg driver.Registry) (public, admin *httptest.Server) {

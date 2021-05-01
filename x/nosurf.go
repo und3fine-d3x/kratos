@@ -4,7 +4,7 @@ import (
 	"encoding/base64"
 	"net/http"
 
-	"github.com/ory/kratos/driver/config"
+	"kratos/driver/config"
 
 	"github.com/pkg/errors"
 
@@ -31,6 +31,8 @@ type CSRFTokenGeneratorProvider interface {
 }
 
 type CSRFToken func(r *http.Request) string
+
+const CSRFTokenName = "csrf_token"
 
 func DefaultCSRFToken(r *http.Request) string {
 	return nosurf.Token(r)

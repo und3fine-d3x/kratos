@@ -13,15 +13,15 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ory/kratos/driver/config"
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/internal"
-	"github.com/ory/kratos/internal/testhelpers"
-	"github.com/ory/kratos/selfservice/flow"
-	"github.com/ory/kratos/selfservice/flow/settings"
-	"github.com/ory/kratos/selfservice/hook"
-	"github.com/ory/kratos/session"
-	"github.com/ory/kratos/x"
+	"kratos/driver/config"
+	"kratos/identity"
+	"kratos/internal"
+	"kratos/internal/testhelpers"
+	"kratos/selfservice/flow"
+	"kratos/selfservice/flow/settings"
+	"kratos/selfservice/hook"
+	"kratos/session"
+	"kratos/x"
 )
 
 func TestSettingsExecutor(t *testing.T) {
@@ -48,7 +48,7 @@ func TestSettingsExecutor(t *testing.T) {
 					i := testhelpers.SelfServiceHookCreateFakeIdentity(t, reg)
 					sess := session.NewActiveSession(i, conf, time.Now().UTC())
 
-					a := settings.NewFlow(time.Minute, r, sess.Identity, ft)
+					a := settings.NewFlow(conf, time.Minute, r, sess.Identity, ft)
 					a.RequestURL = x.RequestURL(r).String()
 					require.NoError(t, reg.SettingsFlowPersister().CreateSettingsFlow(r.Context(), a))
 					_ = handleErr(t, w, r, reg.SettingsHookExecutor().

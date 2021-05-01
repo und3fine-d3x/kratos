@@ -11,13 +11,13 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/tidwall/gjson"
 
-	"github.com/ory/kratos/driver/config"
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/internal"
-	"github.com/ory/kratos/internal/testhelpers"
-	"github.com/ory/kratos/selfservice/flow"
-	"github.com/ory/kratos/selfservice/flow/login"
-	"github.com/ory/kratos/x"
+	"kratos/driver/config"
+	"kratos/identity"
+	"kratos/internal"
+	"kratos/internal/testhelpers"
+	"kratos/selfservice/flow"
+	"kratos/selfservice/flow/login"
+	"kratos/x"
 )
 
 func TestLoginExecutor(t *testing.T) {
@@ -34,13 +34,13 @@ func TestLoginExecutor(t *testing.T) {
 				router := httprouter.New()
 
 				router.GET("/login/pre", func(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
-					if testhelpers.SelfServiceHookLoginErrorHandler(t, w, r, reg.LoginHookExecutor().PreLoginHook(w, r, login.NewFlow(time.Minute, "", r, ft))) {
+					if testhelpers.SelfServiceHookLoginErrorHandler(t, w, r, reg.LoginHookExecutor().PreLoginHook(w, r, login.NewFlow(conf, time.Minute, "", r, ft))) {
 						_, _ = w.Write([]byte("ok"))
 					}
 				})
 
 				router.GET("/login/post", func(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
-					a := login.NewFlow(time.Minute, "", r, ft)
+					a := login.NewFlow(conf, time.Minute, "", r, ft)
 					a.RequestURL = x.RequestURL(r).String()
 					testhelpers.SelfServiceHookLoginErrorHandler(t, w, r,
 						reg.LoginHookExecutor().PostLoginHook(w, r, identity.CredentialsType(strategy), a, testhelpers.SelfServiceHookCreateFakeIdentity(t, reg)))

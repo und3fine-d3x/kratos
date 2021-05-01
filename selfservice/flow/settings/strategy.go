@@ -5,10 +5,14 @@ import (
 	"net/http"
 	"reflect"
 
+	"kratos/session"
+
+	"kratos/ui/node"
+
 	"github.com/pkg/errors"
 
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/x"
+	"kratos/identity"
+	"kratos/x"
 )
 
 const (
@@ -19,8 +23,10 @@ var pkgName = reflect.TypeOf(Strategies{}).PkgPath()
 
 type Strategy interface {
 	SettingsStrategyID() string
+	NodeGroup() node.Group
 	RegisterSettingsRoutes(*x.RouterPublic)
 	PopulateSettingsMethod(*http.Request, *identity.Identity, *Flow) error
+	Settings(w http.ResponseWriter, r *http.Request, f *Flow, s *session.Session) (*UpdateContext, error)
 }
 
 type Strategies []Strategy
@@ -53,4 +59,5 @@ func (s Strategies) RegisterPublicRoutes(r *x.RouterPublic) {
 
 type StrategyProvider interface {
 	SettingsStrategies(ctx context.Context) Strategies
+	AllSettingsStrategies() Strategies
 }

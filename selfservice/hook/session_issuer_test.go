@@ -12,15 +12,15 @@ import (
 	"github.com/stretchr/testify/require"
 	"github.com/tidwall/gjson"
 
-	"github.com/ory/kratos/driver/config"
-	"github.com/ory/kratos/identity"
-	"github.com/ory/kratos/internal"
-	"github.com/ory/kratos/selfservice/flow"
-	"github.com/ory/kratos/selfservice/flow/registration"
-	"github.com/ory/kratos/selfservice/hook"
-	"github.com/ory/kratos/session"
-	"github.com/ory/kratos/x"
 	"github.com/ory/x/randx"
+	"kratos/driver/config"
+	"kratos/identity"
+	"kratos/internal"
+	"kratos/selfservice/flow"
+	"kratos/selfservice/flow/registration"
+	"kratos/selfservice/hook"
+	"kratos/session"
+	"kratos/x"
 )
 
 func TestSessionIssuer(t *testing.T) {

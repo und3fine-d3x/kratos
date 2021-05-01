@@ -15,14 +15,14 @@ import (
 	"github.com/ory/herodot"
 	"github.com/ory/x/urlx"
 
-	"github.com/ory/kratos/driver/config"
-	"github.com/ory/kratos/internal"
-	"github.com/ory/kratos/x"
+	"kratos/driver/config"
+	"kratos/internal"
+	"kratos/x"
 )
 
 func TestSecureContentNegotiationRedirection(t *testing.T) {
 	conf, _ := internal.NewFastRegistryWithMocks(t)
-	var jsonActual = json.RawMessage(`{"foo":"bar"}`)
+	var jsonActual = json.RawMessage(`{"foo":"bar"}` + "\n")
 	writer := herodot.NewJSONWriter(nil)
 
 	router := httprouter.New()

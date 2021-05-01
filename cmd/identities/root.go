@@ -5,7 +5,7 @@ import (
 
 	"github.com/ory/x/cmdx"
 
-	"github.com/ory/kratos/cmd/cliclient"
+	"kratos/cmd/cliclient"
 )
 
 // identitiesCmd represents the identity command
